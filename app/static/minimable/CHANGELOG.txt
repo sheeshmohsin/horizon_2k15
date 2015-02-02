@@ -1,0 +1,164 @@
+
+
+	MINIMABLE
+	
+	Created by Fedeweb - http://www.fedeweb.net
+	
+	- - - - - - - - - - - - - - - - - - - - - - -
+
+	Version 2.0.1 - 27 Jan / 2015
+	
+	Fixed: position of the last bubble mobile  version
+
+	- - - - - - - - - - - - - - - - - - - - - - -
+
+	Version 2.0 - 20 Jan / 2015
+	
+	There is a new premium version with a lot of new features. Take a look at the demo!
+	Added: page preloader
+	Added: external template page. You can create static pages (like privacy, terms and conditionts etc.) with a dedicated page template
+	Added: retina support for logos
+	Updated: theme options completely redesigned
+	Updated: you can set the height of the navbar and the logo
+	Updated: you can show the top bar from the top
+	Updated: you can hide the big logo and slogan from the top section
+	Updated: you can hide bubbles
+	Updated: the main font to the latest version. More supported languages
+	Updated: you can disable spin effects from bubbles
+	Updated: you can add external links for the bubbles
+
+	- - - - - - - - - - - - - - - - - - - - - - -
+
+	Version 1.6.1 - 05 Sep / 2014
+	
+	Fixed: flickering of staff members on the last version of Google Chrome
+
+	- - - - - - - - - - - - - - - - - - - - - - -
+	
+	Version 1.6 - 01 Jul / 2014
+	
+	A new premium version is coming this week with new features!
+	Added: demo content to start using the theme in the best way
+	Added: text area field in the contact section
+	Updated: you can set the scroll speed
+	Updated: the documentation with the instructions for using the demo content
+	Fixed: CSS padding in the home section
+
+	- - - - - - - - - - - - - - - - - - - - - - -
+	Version 1.5.5 - 19 May / 2014
+	
+	There is a new premium version with a lot of new features. Take a look at the demo!
+	Added: instagram icon to the contact page and staff member
+	Updated: you can add a description in the gallery page
+	Updated: you can add a maximum number of 20 pages instead of 10
+
+	- - - - - - - - - - - - - - - - - - - - - - -
+	
+	Version 1.5.4 - 15 Jan / 2014
+	
+	There is a new premium version with a lot of new features. Take a look at the demo!
+	Added: instagram icon to the contact page and staff member
+	Updated: you can add a description in the gallery page
+	Updated: you can add a maximum number of 20 pages instead of 10
+
+	- - - - - - - - - - - - - - - - - - - - - - -
+
+	Version 1.5.3 - 19 Dic / 2013
+	
+	Fixed: updated the style in the Minimable Options due to the WordPress 3.8 new colors
+
+	- - - - - - - - - - - - - - - - - - - - - - -
+	
+	Version 1.5.2 - 09 Dic / 2013
+	
+	Fixed: fix the page link problem with special chars
+	Added: now you can add social links for each staff member!
+	Fixed: when you click the mini logo the site scrolls up
+	Fixed: custom page link works for all pages
+	
+	- - - - - - - - - - - - - - - - - - - - - - -
+	
+	Version 1.5.1 - 03 Dic / 2013
+	
+	Fixed: fix the page link problem with special chars
+	
+	- - - - - - - - - - - - - - - - - - - - - - -
+
+	Version 1.5 - 02 Dic / 2013
+
+	Minimable Premium - Is ready!
+	Added: smooth fade animation on hover
+	Updated: if the member in the staff is only one, the filter disappear
+	Updated: the documentation. Please read it because many things have changed	
+	Updated: the menu on mobile navigation disappear when you tap a link 
+	Updated: changed the icons in the contact template
+
+	- - - - - - - - - - - - - - - - - - - - - - -
+
+	Version 1.4 - 30 Ott / 2013
+
+	Minimable Premium - In the first half of November the premium version will be ready!
+	Added: full width template page!
+	Updated: improved the jQuery code	
+	Updated: remove the limit of the items in the staff and portfolio section
+	Updated: added the necessary information for the general page template
+	Fixed: icons in the Gallery now appears in Google Chrome too
+	
+	- - - - - - - - - - - - - - - - - - - - - - - 
+
+
+	Version 1.3.1 - 21 Aug / 2013
+
+	Minimable Premium - In the first half of September the premium version will be ready!
+	Updated: improved the documentation by adding a screenshot in the menu section	
+	Fixed: the favicon option now works
+
+	- - - - - - - - - - - - - - - - - - - - - - -
+	
+	
+	Version 1.3 - 30 Jul / 2013
+
+	Updated: improved the documentation and added a FAQ section
+	Updated: the "Go to work" link, in Portfolio section, now appears only when you fill in the URL link field in the dashboard
+	Updated: now, in Minimable Option you can set the "Go to work" label
+	Updated: when you activate Minimable for the first time, appears a message in the live site that told you which will be the next step
+	Updated: enabled external custom links in the menu
+	Updated: "Find us" and "Contact us" labels now are editable.
+	Fixed: iOS input aspect. Now it's the same of the desktop site version
+	Fixed: the contact informations on the left appears only when you put the label (email, fax, etc)
+	Fixed: the staff section issue, when the screen resolution has a width of 2500px
+	Fixed: the margin of the input fields in the Wordpress dashboard
+
+	- - - - - - - - - - - - - - - - - - - - - - -
+	
+	Version 1.2 - 01 Jul / 2013
+
+	Updated: Improved typography design
+	Added: documentation option in Minimable Settings
+	Added: more details in Minimable documentation
+	Fixed: changed position of lightbox image controller
+	Fixed: footer cutted when is on two row
+	Fixed: scrollorama is now applied to all page galleries you create
+	Removed: minimoll.css file from css folder
+
+	- - - - - - - - - - - - - - - - - - - - - - -
+
+	Version 1.1 - 26 Jun / 2013
+
+	Added: changelog file
+	Added: created a docs folder
+	Fixed: footer cutted on smartphones
+	Fixed: scrolling on the last section with big resolutions
+	Fixed: bug when you hover on the rounded thumbs in the gallery section, in Firefox (Windows)
+	Fixed: menu overlay on the circle link in the home section
+	Fixed: focus state on the email field in the contact section
+	Fixed: width of the input fields in Appereance - Menu
+
+	- - - - - - - - - - - - - - - - - - - - - - -
+
+	Version 1.0 - 25 Jun / 2013
+
+	First Release
+
+	- - - - - - - - - - - - - - - - - - - - - - -
+

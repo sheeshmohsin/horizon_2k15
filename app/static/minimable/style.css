@@ -1,0 +1,910 @@
+/*
+ Theme Name: 	Minimable
+ Theme URI: 	http://minimable.fedeweb.net/demo
+ Description: 	A minimal and scrollable wordpress theme
+ Version: 		2.0.1
+ Author: 		Fedeweb
+ Author URI: 	http://www.fedeweb.net
+ Tags: 			minimal,black,light,scrollable
+ */
+
+/*
+ ===========================
+ CONTENTS:
+
+ 01 General
+ 02 Menu
+ 03 Home Template
+ 04 Staff Template
+ 05 Gallery Template
+ 06 Portfolio Template
+ 07 Contact Template
+ 08 Fullwidth Template
+ 09 Media queries
+ ===========================
+ */
+
+/* ----------------------------------------------------------------------------------------------------------
+ 01 General ----------------------------------------------------------------------------------------
+ ---------------------------------------------------------------------------------------------------------- */
+#prepage {background:#fff;display:block;height:100%;overflow:hidden;position:absolute;right:0;top:0;bottom:0;left:0;width:100%;z-index:9998;}
+
+body {
+	background: #f9f9f9;
+	font-family: 'Open Sans', 'Verdana', 'Arial', sans-serif;
+	color: #2d2d2d;
+	font-size:13px;
+	line-height:20px;
+}
+
+/* TYPOGRAPY */
+
+@font-face {font-family: 'NovecentowideBookBold';src: url('fonts/2D04C8_0_0.eot');src: url('fonts/2D04C8_0_0.eot?#iefix') format('embedded-opentype'),url('fonts/2D04C8_0_0.woff2') format('woff2'),url('fonts/2D04C8_0_0.woff') format('woff'),url('fonts/2D04C8_0_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'NovecentowideLightRegular';src: url('fonts/2D04C8_1_0.eot');src: url('fonts/2D04C8_1_0.eot?#iefix') format('embedded-opentype'),url('fonts/2D04C8_1_0.woff2') format('woff2'),url('fonts/2D04C8_1_0.woff') format('woff'),url('fonts/2D04C8_1_0.ttf') format('truetype');}
+h1,h2,h3,h4,h5,h6 {
+	font-weight:300;
+}
+h3 {
+	font-size:30px;
+	color: #333;
+	font-weight:300;
+}
+p {
+	font-weight: 400;
+} 
+#menu-top{
+	z-index: 99999;
+	position:relative;
+}
+.hide-menu {
+	display:none;
+}
+li, a, img {
+	outline: none !important;
+}
+section {
+	padding-top: 110px;
+	margin-bottom: 150px;
+	overflow: hidden;
+}
+.last-section {
+	margin-bottom:120px;
+}
+.section-title {
+	font-family: 'NovecentowideBookBold';
+	font-size: 50px;
+	line-height: 50px;
+	margin-bottom: 40px;
+	font-weight: normal;
+	text-transform: uppercase;
+}
+.border {
+	border-top: 1px solid #f0f0f0;
+	padding-top: 20px;
+}
+a {
+	color:#01A3B2;
+}
+a:hover {
+	text-decoration:underline;
+	color:#01A3B2;
+}
+footer {
+	margin-bottom:0px;
+	background:#000000;
+	padding:15px 0;
+	color:#fff;
+	font-size:12px;
+	font-family: 'NovecentowideLightRegular';
+}
+footer a {
+	color:#fff;
+	text-decoration:underline;
+}
+input, textarea {
+	-webkit-appearance: none;
+	border-radius: 0;
+}
+.activation-message {
+	text-align:center;
+	font-size:20px;
+	line-height:22px;
+	padding:50px;
+}
+#page-2 .activation-message,#page-3 .activation-message,#page-4 .activation-message,#page-5 .activation-message {
+	display:none;
+}
+/* ----------------------------------------------------------------------------------------------------------
+ 02 Menu ----------------------------------------------------------------------------------------
+ ---------------------------------------------------------------------------------------------------------- */
+
+.navbar .collapse {
+	float: right;
+	display: table;
+	margin-right: 30px;
+}
+.navbar .collapse #nav-menu {
+	display: table-cell;
+	vertical-align: middle;
+	float: none;
+}
+.navbar-inner {
+	border:0;
+}
+.navbar-inverse .navbar-inner {
+	background-color: #f9f9f9;
+	background-image: none;
+	border:none;
+	box-shadow: none;
+	-webkit-transition: all 0.4s ease;
+	-moz-transition: all 0.4s ease;
+	-o-transition: all 0.4s ease;
+	-ms-transition: all 0.4s ease;
+	transition: all 0.4s ease;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.fixed .navbar-inverse .navbar-inner {
+	background-color: #000;
+}
+.page-template-main-template-php #menu-top {
+	opacity: 0;
+	position: relative;
+}
+.page-template-main-template .navbar-inverse .nav-bar-visible {
+	display: block;
+}
+.page-template-main-template .fixed .navbar-inverse .navbar-inner {
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.navbar .nav > li > a {
+	padding: 0px 0 0px 15px;
+	font-family: 'Open Sans', 'Verdana', 'Arial', sans-serif;
+	text-transform:uppercase;
+	font-weight:400;
+	box-shadow:none!important;
+	text-shadow:none!important;
+	color:#666;
+}
+.navbar .nav > li {
+	position: relative;
+}
+.navbar .nav > li > a:hover {
+	background:transparent!important;
+	box-shadow:none!important;
+	color:#333;
+}
+.navbar .nav > li.active > a, .current-menu-item a {
+	background:transparent!important;
+	box-shadow:none!important;
+	color:#333!important;
+}
+.fixed .navbar .nav > li > a {
+	color: #777;
+}
+.fixed .navbar .nav > li > a:hover {
+	color:#fff;
+}
+.fixed .navbar .nav > li.active > a, .fixed .current-menu-item a {
+	color:#fff!important;
+}
+#mini-logo {
+	width:auto;
+	float:left;
+	display: table;
+}
+#mini-logo a {
+	display:table-cell;
+	vertical-align: middle;
+}
+#mini-logo img {
+	height:14px;
+	width:auto;
+	display:block;
+}
+.sub-menu {
+	opacity: 0;
+	visibility: hidden;
+	z-index: -1;
+	position: absolute;
+	width: 170px;
+	height: auto;
+	padding: 10px;
+	background:#ffffff; 
+	list-style: none;
+	left: 50%;
+	margin-left: -85px;
+	-webkit-transition: all 0.8s ease;
+	-moz-transition: all 0.8s ease;
+	-o-transition: all 0.8s ease;
+	-ms-transition: all 0.8s ease;
+	transition: all 0.8s ease;
+	border: 1px solid #ccc;
+}
+.sub-menu li {
+	text-align: center;
+	line-height: 30px;
+}
+.sub-menu li a {
+	display: block;
+	color:#999;
+	font-family: 'Open Sans', 'Verdana', 'Arial', sans-serif;
+	font-size:13px;
+	text-transform: uppercase;
+}
+.navbar .nav > li:hover > .sub-menu {
+	opacity: 1;
+	visibility: visible;
+	z-index: 9;
+}
+.sub-menu .current-menu-item a {
+	color:#999!important;
+}
+#btn-menu-container {
+	display: none;
+} 
+.navbar .btn-navbar .icon-bar {
+	box-shadow: none;
+	width: 25px;
+	height: 3px;
+	border-radius: 0;
+}
+/* ----------------------------------------------------------------------------------------------------------
+ 03 Home Template ----------------------------------------------------------------------------------------
+ ---------------------------------------------------------------------------------------------------------- */
+
+.full-home {
+	width:100%;
+	height:100%;
+	display: table;
+	padding:0!important;
+	position:relative;
+}
+
+.full-home .container {
+	padding:0 20px;
+	display: table-cell;
+	margin: auto;
+	min-height: 100%;
+	position: relative;
+	text-align: center;
+	vertical-align: middle;
+	width: 100%;
+}
+.full-home .no-bubbles {
+	height: 300px;
+	margin-top: -150px;
+}
+#home-header {
+	margin: auto;
+	margin-bottom: 50px;
+	max-width: 1170px;
+	width: 100%;
+	overflow: hidden;
+}
+#home-header .left-logo {
+	float: left;
+}
+#logo-title {
+	font-size:60px;
+	text-align:left;
+	font-family: 'NovecentowideBookBold';
+	font-weight:normal;	
+}
+#mini-slogan {
+	font-family: 'NovecentowideLightRegular';
+	font-weight:normal;
+	text-align:right;
+	font-size:18px;
+	padding-top:8px;
+	float: right;
+	text-transform: uppercase;
+}
+#slogan {
+	display: block;
+	overflow: hidden;
+}
+.three-big {
+	height: 218px;
+}
+.two-big {
+	height: 130px;
+}
+.one-big {
+	height: 100px;
+}
+.big-title {
+	font-family: 'NovecentowideLightRegular';
+	text-align: center;
+	padding-top: 0px;
+	font-size: 50px;
+	line-height:50px;
+	margin-bottom: 20px;
+	font-weight: normal;
+	display:none;
+	text-transform: uppercase;
+}
+#bubbles {
+	margin-top: 60px;
+}
+.big-title span {
+	background:#000;
+	padding:3px 10px;
+}
+#nav-home ul {
+    list-style: none;
+    font-size: 0;
+    margin: 0;
+}
+nav#nav-home ul li {
+	display:inline-block;
+	position:relative;
+	margin-right: 20px;
+}
+nav#nav-home ul li:last-child {
+	margin-right: 0;
+}
+.circle-menu {
+	width: 150px;
+	height: 150px;
+	background: #01a3b2;
+	-moz-border-radius: 85px;
+	-webkit-border-radius: 85px;
+	border-radius: 85px;
+	text-align:center;
+	color:#fff;
+	display:table-cell;
+	vertical-align:middle;
+	margin:auto;
+	position:relative;
+	font-size:16px;
+	z-index: 0;
+	font-family: 'NovecentowideLightRegular';
+	text-transform: uppercase;
+	padding: 10px;
+}
+.circle-black {
+	background: #000!important;
+}
+.label-link {
+	position:relative;
+	display:inline-block;
+	color:#fff;
+}
+.spin-effect .label-link {
+	-moz-transition: all 1s ease;
+	-webkit-transition: all 1s ease;
+	-o-transition: all 1s ease;
+	transition: all 1s ease;
+}
+.spin-effect .circle-menu:hover .label-link {
+	-moz-transform:  rotate(360deg);
+	-webkit-transform: rotate(360deg);
+	-o-transform:  rotate(360deg);
+	transform:  rotate(360deg);
+	color:#fff;
+} 
+span.arrow {
+	display:block;
+	background:url(img/arrow.png) no-repeat;
+	width:18px;
+	height:9px;
+	margin-left:-9px;
+	position:absolute;
+	bottom:20px;
+	left:50%;
+	z-index: 3;
+}
+#nav-home .custom-link span.arrow {
+	display:none;
+}
+
+.ie8 .page-1 .container {
+	padding:50px 0;
+	position:relative;
+	height:auto;
+	width:940px;
+	top:auto;
+	left:auto;
+	margin-top:0;
+	margin-left:auto;
+}
+
+/* ----------------------------------------------------------------------------------------------------------
+ 04 Staff Template ----------------------------------------------------------------------------------------
+ ---------------------------------------------------------------------------------------------------------- */
+
+#staff {
+	overflow: hidden;
+}
+.col-title {
+	font-family: 'NovecentowideLightRegular';
+	font-size: 20px;
+	font-weight: normal;
+	line-height: 20px;
+	font-style:normal;
+}
+.tab-content {
+	overflow: hidden;
+}
+.nav-tabs {
+	border: 0;
+}
+.nav-tabs li a {
+	border: 0;
+	font-weight: normal;
+	background: #01A3B2;
+	color: #ffffff;
+	border-radius: 0;
+	font-family: 'NovecentowideLightRegular';
+	margin-bottom:3px;
+	-webkit-transition: all 0.2s ease-in-out;
+	-moz-transition: all 0.2s ease-in-out;
+	-o-transition: all 0.2s ease-in-out;
+	-ms-transition: all 0.2s ease-in-out;
+}
+.nav-tabs > li > a:hover {
+	background: #000000;
+	color: #ffffff;
+	border: 0;
+	border-radius: 0;
+}
+.nav-tabs > .active > a, .nav-tabs > .active > a:hover {
+	background: #000;
+	color: #ffffff;
+	border: 0;
+	border-radius: 0;
+}
+
+/* ----------------------------------------------------------------------------------------------------------
+ 05 Gallery Template ----------------------------------------------------------------------------------------
+ ---------------------------------------------------------------------------------------------------------- */
+
+.magnifier {
+	opacity: 1;
+	position: relative;
+	height: auto;
+	display: block;
+	-webkit-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+	-moz-transition: none;
+	text-align:center;
+}
+.magnifier:hover {
+	opacity: 0.7;
+}
+.magnifier:after {
+	content: '';
+	display: block;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	opacity: 0;
+	left: 0;
+	top: 0;
+	background: url('img/magnifier.png') center center no-repeat;
+	-webkit-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+	-moz-transition: none;
+}
+.magnifier:hover:after {
+	opacity: 1;
+}
+.gallery-content {
+	margin-bottom:30px;
+}
+
+/* ----------------------------------------------------------------------------------------------------------
+ 06 Portfolio Template ----------------------------------------------------------------------------------------
+ ---------------------------------------------------------------------------------------------------------- */
+
+#portfolio a.link-portfolio {
+	background: #01A3B2;
+	color: #ffffff!important;
+	text-decoration: none;
+	font-weight: normal;
+	padding: 8px 12px;
+	margin-top: 20px;
+	display: block;
+	width: 94px;
+	font-family: 'NovecentowideLightRegular';
+	-webkit-transition: all 0.2s ease-in-out;
+	-moz-transition: all 0.2s ease-in-out;
+	-o-transition: all 0.2s ease-in-out;
+	-ms-transition: all 0.2s ease-in-out;
+}
+#portfolio a.link-portfolio:hover {
+	background: #000000;
+}
+.item {
+	margin-bottom: 30px;
+}
+
+/* ----------------------------------------------------------------------------------------------------------
+ 07 Contact Template ----------------------------------------------------------------------------------------
+ ---------------------------------------------------------------------------------------------------------- */
+
+.email-link {
+	font-family: 'Open Sans', 'Verdana', 'Arial', sans-serif;
+	color:#000000;
+	text-decoration:underline;
+}
+#find-us h3, #contact-info h3 {
+	margin-bottom:30px;
+}
+#find-us ul li {
+	line-height:30px;
+	font-size:15px;
+	font-weight:400;
+}
+#find-us ul.contact-info li span {
+    text-align: center;
+    width: 20px;
+}
+#contact ul li {
+	margin-bottom: 10px;
+}
+ul.social {
+	margin-top:20px;
+} 
+ul.social li {
+	margin-right:10px;
+	float:left;
+}
+ul.social li a span {
+	-webkit-transition: all 0.2s ease-in-out;
+	-moz-transition: all 0.2s ease-in-out;
+	-o-transition: all 0.2s ease-in-out;
+	-ms-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+}
+ul.social li a span:hover {
+	color:#000000!important;
+}
+input[type="text"],input[type="email"], textarea {
+	border: none;
+	background: transparent;
+	border-bottom: 1px solid #999;
+	box-shadow: none;
+	margin-bottom: 20px;
+	border-radius: 0;
+	font-weight:400;
+}
+textarea:focus, input[type="text"]:focus,input[type="email"]:focus {
+	border-bottom: 1px solid #f0f0f0;
+	box-shadow: none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	border-radius: 0;
+}
+input[type="submit"] {
+	border: 0;
+	background: #01a3b2;
+	padding: 10px 20px;
+	text-transform:uppercase;
+	font-weight:300;
+	-webkit-transition: all 0.2s ease-in-out;
+	-moz-transition: all 0.2s ease-in-out;
+	-o-transition: all 0.2s ease-in-out;
+	-ms-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+	color:#fff;
+}
+input[type="submit"]:hover {
+	background:#000000;
+}
+span.wpcf7-not-valid-tip {
+	background: none !important;
+	border: 0 !important;
+	color: red;
+	font-size: 10pt;
+	padding: 2px;
+	position: absolute;
+	left: 20%;
+	top: -78% !important;
+	width: 280px;
+	z-index: 100;
+}
+#contact-info, #find-us {
+	position:relative;
+}
+#contact-info a {
+	text-decoration:underline;
+}
+#more-information {
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+#more-information h3 {
+	margin:auto;
+	font-size: 24.5px;
+}
+#more-information ul li, #more-information ol li {
+	font-size:13px;
+	line-height: 20px;
+}
+
+
+/* ----------------------------------------------------------------------------------------------------------
+ 08 Fullwidth Template ----------------------------------------------------------------------------------------
+ ---------------------------------------------------------------------------------------------------------- */
+
+img.alignleft {
+	float:left;
+	margin: 0 20px 20px 0;
+}
+img.alignright {
+	float:right;
+	margin: 0 0 20px 20px;
+}
+img.aligncenter {
+	display:block;
+	margin:20px auto;
+}
+img.alignnone {
+	display:block;
+	margin-bottom:20px;
+}
+/* ----------------------------------------------------------------------------------------------------------
+ 09 Media Queries ----------------------------------------------------------------------------------------
+ ---------------------------------------------------------------------------------------------------------- */
+
+@media (min-height:780px) {
+	.last-section {
+		min-height:750px;
+	}
+}
+
+@media (max-width: 1199px) {
+	nav#nav-home ul li {
+		width: 135px;
+	}
+	.circle-menu {
+		height:115px;
+	}
+	#mini-slogan {
+		padding-top:4px;
+		font-size:16px;
+	}
+}
+@media (max-width: 979px) and (min-width: 767px) {
+	.feature-title {
+		font-size: 29px;
+	}
+	.navbar .nav {
+		float: left;
+	}
+	.home-col h2 {
+		font-size: 30px;
+		line-height: 30px;
+	}
+	.big-title {
+		font-size:40px;
+		line-height: 40px;
+	}
+	.circle-menu {
+		font-size:12px;
+	}
+}
+
+
+@media (max-width: 979px) {
+	.navbar,.navbar {
+		line-height: 60px!important;
+	}
+	.navbar .collapse #nav-menu, #mini-logo a {
+		height: 60px!important;
+	}
+	#mini-logo img {
+		height: auto!important;
+		max-height: 30px;
+	}
+	.home-section {
+		height: auto!important;
+	}
+	.navbar .collapse {
+		display: inline;
+		float: left;
+		margin-right: 0;
+		width: 100%;
+		background-color: #000!important;
+	}
+	#btn-menu-container {
+		display: table;
+		float: right;
+	}
+	#btn-menu-container .btn-navbar {
+		float: none;
+		display: table-cell;
+		vertical-align: middle;
+		margin-top: -4px;
+		box-shadow: none;
+		background: transparent;
+		border:none;
+	}
+	#btn-menu-container .btn-navbar span {
+		background-color: #000
+	}
+	.fixed #btn-menu-container .btn-navbar .icon-bar {
+		background-color: #fff;
+	}
+	.navbar-fixed-top, .navbar-fixed-bottom {
+		position: fixed;
+		-webkit-transform: translateZ(0);
+	}
+	.navbar-fixed-top, .navbar-fixed-bottom {
+		position: fixed;
+	}
+	.navbar-fixed-top .navbar-inner, .navbar-fixed-bottom .navbar-inner {
+		padding: 0;
+	}
+	.nav-collapse ul {
+		margin-top:10px;
+		padding-top:20px;
+	}
+	.nav-collapse ul li {
+		padding-bottom:20px;
+	}
+	.nav-collapse ul > li > a {
+		padding: 0px 10px 0px!important;
+		line-height: 14px!important;
+		height: auto!important;
+		color:#999!important;
+	}
+	.nav-collapse ul > li:hover > .sub-menu {
+		top:auto!important;
+		left:auto!important;
+	}
+	.sub-menu {
+		visibility: visible;
+		z-index: 9;
+		opacity: 1;
+		background: transparent;
+		margin-left: 20px;
+		border: 0;
+		top:auto!important;
+		left: auto;
+		position: relative;
+		padding: 0;
+		margin-top:0!important;
+		padding-top: 10px!important;
+	}
+	.sub-menu li {
+		text-align: left;
+		line-height: 10px;
+		padding-bottom: 0px!important;
+	}
+
+	.nav-collapse ul > li > .sub-menu > li > a {
+		display: block;
+		color:#999!important;
+		font-family: 'Open Sans', 'Verdana', 'Arial', sans-serif;
+		font-size:12px;
+		text-transform: uppercase;
+	}
+	.sub-menu li a:hover {
+		text-decoration: none;
+	}
+	nav#nav-home ul li {
+		width: 104px;
+	}
+	.circle-menu {
+		height:84px;
+	}
+	#home-header {
+		margin-top:-26px;
+	}
+	#mini-logo {
+		padding-left:10px;
+	}
+	#mini-slogan {
+		padding-top:8px;
+		font-size:14px;
+		line-height: 14px;
+	}
+	.circle-menu:hover .label-link {
+		/* Firefox */
+		-moz-transform: scale(1) rotate(0deg) translate(0px);
+		/* WebKit */
+		-webkit-transform: scale(1) rotate(0deg) translate(0px);
+		/* Opera */
+		-o-transform: scale(1) rotate(0deg) translate(0px);
+		/* Standard */
+		transform: scale(1) rotate(0deg) translate(0px);
+		color:#fff;
+	} 
+	.section-page {
+		padding: 80px 20px 80px 20px!important;
+		background-position:50% 0!important;
+	}
+	.home-section {
+		padding: 80px 0px 80px 0px!important;
+	}
+}
+@media (max-width: 767px) {
+	body {
+		padding:0;
+	}
+	#logo {
+		max-width:280px;
+		margin:auto;
+		float: none!important;
+	}
+	.full-home .container {
+		width:auto;
+		position:relative;
+		padding:0;
+		top:auto;
+		left:auto;
+		margin:0;
+	}
+	footer {
+		padding-left:20px;
+		padding-right:20px;
+	}
+	.big-title {
+		font-size: 30px;
+		line-height: 40px;
+		margin-bottom: 10px;
+	}
+	.three-big,.two-big,.one-big   {
+		height: auto;
+	}
+	.section-title {
+		font-size: 30px;
+		line-height: 30px;
+		margin-bottom: 20px;
+	}
+	.navbar .nav {
+		float: left;
+	}
+	#slogan {
+		margin: 30px 0;
+	}
+	#contact-info {
+		clear: both;
+		margin-top: 80px;
+	}
+	#logo img {
+		display:block;
+		margin:auto;
+	}
+	#mini-slogan {
+		text-align:center;
+		float:none;
+		line-height:20px;
+	}
+	.navbar-fixed-top, .navbar-fixed-bottom, .navbar-static-top {
+		margin: 0;
+	}
+	#home-header {
+		margin-bottom:30px;
+	}
+	nav#nav-home ul li,nav#nav-home ul li {
+		width:170px;
+		margin:20px auto 0!important;
+		display: block;
+	}
+	.circle-menu {
+		height:150px;
+	}
+}
+@media only screen 
+	and (min-device-width : 768px) 
+	and (max-device-width : 1024px) 
+	and (orientation : landscape) {
+	.circle-menu:hover .label-link {
+		/* Firefox */
+		-moz-transform: scale(1) rotate(0deg) translate(0px);
+		/* WebKit */
+		-webkit-transform: scale(1) rotate(0deg) translate(0px);
+		/* Opera */
+		-o-transform: scale(1) rotate(0deg) translate(0px);
+		/* Standard */
+		transform: scale(1) rotate(0deg) translate(0px);
+		color:#fff;
+	} 
+}
