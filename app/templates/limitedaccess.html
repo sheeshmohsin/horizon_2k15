@@ -1,0 +1,137 @@
+{% load bootstrap3 %}
+{% load avatar_tags %}
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>Registration</title>
+  {% bootstrap_css %}
+  <link rel="stylesheet" href="/static/bootstrap-multiselect/dist/css/bootstrap-multiselect.css" type="text/css"/>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script type="text/javascript" src="/static/bootstrap-multiselect/dist/js/bootstrap-multiselect.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
+  <!-- <link rel="stylesheet" href="/static/css/registration.css" type="text/css"/> -->
+  <style type="text/css">
+  body{
+    padding-top:70px;
+  }
+  .glyphicon{
+    color:white;
+  }
+  #id_name, #id_phonenumber, #id_college{
+    border-right: 5px solid red;
+  }
+  </style>
+</head>
+
+<body style="background-image: url('../static/images/profile-wallpaper.jpg');background-size:cover;">
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" id="fmeasure" style="background:rgb(7,36,50);border-bottom:rgb(7,36,50);">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/profile" style="color:white;">Events Registration</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/profile"><span class="glyphicon">Hi, {{ request.user.first_name }}</span></a></li>
+            <li><a href="/"><span class="glyphicon glyphicon-home"></span></a></li>
+            <li><a href="/accounts/logout/"><span class="glyphicon glyphicon-log-out"></span></a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <!-- End fixed navbar -->
+
+    <div class="container">
+        <div class="col-lg-12">
+            <p style="font-family: 'Indie Flower', cursive;font-size:1.5em;color:white;">Hey, You have crossed the limit of submission.</p>
+            <image src="/static/images/goofy.png" height=450 />
+            <br>&nbsp;<br>
+        </div>
+    </div>
+    <!-- <div class="foot">
+        <p>*Users Registering for group events will have to submit their team member's name on spot!</p>
+    </div> -->
+<div id="footer">
+    <div class="container">
+    <div style="float: left;">  <h5 style="color: rgb(195, 191, 191);
+">* Users Registering for group events will have to submit their team member's name on spot!<br>** These events contain individual participation charges<br>Note: Events that doesn't contain * and ** are included under central registration.</h5></a>
+        </div>    
+  </div>
+</div>
+<style>
+#footer {
+  position:fixed;
+  bottom:0;
+  width:100%;
+  background:rgb(7,36,50);
+}
+.footer_link {
+    color : #C7C7C7;    
+}
+</style>
+
+  	{% bootstrap_javascript %}
+  	<script type="text/javascript">
+    	$(document).ready(function() {
+        	$('#id_gaming').multiselect({
+                disableIfEmpty: true,
+                includeSelectAllOption: true,
+                buttonWidth: $('#id_phonenumber').width(),
+                enableCaseInsensitiveFiltering: true
+            });
+        	$('#id_ce').multiselect({
+                disableIfEmpty: true,
+                includeSelectAllOption: true,
+                buttonWidth: $('#id_phonenumber').width(),
+                enableCaseInsensitiveFiltering: true
+            });
+        	$('#id_me').multiselect({
+                disableIfEmpty: true,
+                includeSelectAllOption: true,
+                buttonWidth: $('#id_phonenumber').width(),
+                enableCaseInsensitiveFiltering: true
+            });
+        	$('#id_ee').multiselect({
+                disableIfEmpty: true,
+                includeSelectAllOption: true,
+                buttonWidth: $('#id_phonenumber').width(),
+                enableCaseInsensitiveFiltering: true
+            });
+        	$('#id_eie').multiselect({
+                disableIfEmpty: true,
+                includeSelectAllOption: true,
+                buttonWidth: $('#id_phonenumber').width(),
+                enableCaseInsensitiveFiltering: true
+            });
+        	$('#id_ece').multiselect({
+                disableIfEmpty: true,
+                includeSelectAllOption: true,
+                buttonWidth: $('#id_phonenumber').width(),
+                enableCaseInsensitiveFiltering: true
+            });
+        	$('#id_cseit').multiselect({
+                disableIfEmpty: true,
+                includeSelectAllOption: true,
+                buttonWidth: $('#id_phonenumber').width(),
+                enableCaseInsensitiveFiltering: true
+            });
+        	$('#id_foreveryone').multiselect({
+                disableIfEmpty: true,
+                includeSelectAllOption: true,
+                buttonWidth: $('#id_phonenumber').width(),
+                enableCaseInsensitiveFiltering: true
+            });
+	    });
+	</script>
+</body>
+
+</html>

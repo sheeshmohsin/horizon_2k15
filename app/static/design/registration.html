@@ -1,0 +1,182 @@
+
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>Registration</title>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" media="screen" rel="stylesheet">
+  <link rel="stylesheet" href="/static/bootstrap-multiselect/dist/css/bootstrap-multiselect.css" type="text/css"/>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script type="text/javascript" src="/static/bootstrap-multiselect/dist/js/bootstrap-multiselect.js"></script>
+</head>
+
+<body>
+	<div class="container">
+		<div class="row">
+            <div class="col-lg-8">
+			<form class="form-horizontal" action="/profileform/" method="post"><input type='hidden' name='csrfmiddlewaretoken' value='4iQMG5GIHj6vJY5LiwH80FXhTdlLAXM6' />
+  				<fieldset>
+    				<legend>Registration</legend>
+    				<div class="form-group">
+    					<label for="id_name" class="col-lg-4 control-label">Name:</label>
+    					<div class="col-lg-8">
+    						<input class="form-control" id="id_name" maxlength="40" name="name" type="text" />
+                            <span style="color:red"></span>
+    					</div>
+    				</div>
+    				<div class="form-group">
+	    				<label for="id_phonenumber" class="col-lg-4 control-label">Phone Number:</label>
+    					<div class="col-lg-8">
+    						<input class="form-control" id="id_phonenumber" maxlength="10" name="phonenumber" type="text" />
+                            <span style="color:red"></span>
+    					</div>
+    				</div>
+                    <div class="form-group">
+                        <label for="id_phonenumber" class="col-lg-4 control-label">College Name:</label>
+                        <div class="col-lg-8">
+                            <input class="form-control" id="id_college" maxlength="50" name="college" type="text" />
+                            <span style="color:red"></span>
+                        </div>
+                    </div>
+    				<div class="form-group">
+    					<label for="id_foreveryone" class="col-lg-4 control-label">Events under central registration:</label>
+    					<div class="col-lg-8">
+    						<select multiple="multiple" class="form-control" id="id_foreveryone" name="foreveryone">
+<option value="1">Ignitia</option>
+<option value="2">#include&lt;Wannacode.h&gt;</option>
+<option value="3">Web Development</option>
+<option value="4">Tee-Zine</option>
+<option value="5">Show-Off</option>
+<option value="6">Bizcognito</option>
+<option value="7">Xposed</option>
+<option value="8">Robotics</option>
+<option value="9">Appstruct</option>
+<option value="10">Pen-It-Down</option>
+</select>
+                            <span style="color:red"></span>
+    					</div>
+    				</div>
+    				<div class="form-group">
+    					<label for="id_cseit" class="col-lg-4 control-label">Cse/It events:</label>
+    					<div class="col-lg-8">
+    						<select multiple="multiple" class="form-control" id="id_cseit" name="cseit">
+<option value="1">The LinQuest</option>
+<option value="2">Hack-A-Sauras</option>
+</select>
+                            <span style="color:red"></span>
+    					</div>
+    				</div>
+    				<div class="form-group">
+    					<label for="id_ece" class="col-lg-4 control-label">Ece events:</label>
+    					<div class="col-lg-8">
+    						<select multiple="multiple" class="form-control" id="id_ece" name="ece">
+<option value="1">WizzComBiz</option>
+<option value="2">Junk Tronix</option>
+<option value="3">Fox-Trade</option>
+</select>
+                            <span style="color:red"></span>
+    					</div>
+    				</div>
+    				<div class="form-group">
+    					<label for="id_eie" class="col-lg-4 control-label">Eie events:</label>
+    					<div class="col-lg-8">
+    						<select multiple="multiple" class="form-control" id="id_eie" name="eie">
+<option value="1">Catechization</option>
+<option value="2">Innvocion</option>
+<option value="3">CheckMate</option>
+</select>
+                            <span style="color:red"></span>
+    					</div>
+    				</div>
+    				<div class="form-group">
+    					<label for="id_ee" class="col-lg-4 control-label">Ee events:</label>
+    					<div class="col-lg-8">
+    						<select multiple="multiple" class="form-control" id="id_ee" name="ee">
+<option value="1">Electr-O-Buzz</option>
+<option value="2">Track-N-Crack</option>
+</select>
+                            <span style="color:red"></span>
+    					</div>
+    				</div>
+    				<div class="form-group">
+    					<label for="id_me" class="col-lg-4 control-label">Me events:</label>
+    					<div class="col-lg-5">
+    						<select multiple="multiple" class="form-control" id="id_me" name="me">
+<option value="1">MechTrix</option>
+</select>
+                            <span style="color:red"></span>
+    					</div>
+    				</div>
+    				<div class="form-group">
+    					<label for="id_ce" class="col-lg-4 control-label">Ce events:</label>
+    					<div class="col-lg-5">
+    						<select multiple="multiple" class="form-control" id="id_ce" name="ce">
+<option value="1">Infra-Quiz</option>
+<option value="2">The Builder</option>
+<option value="3">Make Ur World</option>
+<option value="4">Autocad Designing</option>
+</select>
+                            <span style="color:red"></span>
+    					</div>
+    				</div>
+    				<div class="form-group">
+    					<label for="id_gaming" class="col-lg-4 control-label">Gaming events:</label>
+    					<div class="col-lg-5">
+    						<select multiple="multiple" class="form-control" id="id_gaming" name="gaming">
+<option value="1">Counter Strike 1.6</option>
+<option value="2">NFS Most Wanted</option>
+<option value="3">FIFA 11</option>
+<option value="4">Angry Birds</option>
+<option value="5">Tekken</option>
+</select>
+                            <span style="color:red"></span>
+    					</div>
+    				</div>
+    				<div class="form-group">
+      					<div class="col-lg-5 col-lg-offset-2">
+        					<button class="btn btn-default">Cancel</button>
+        					<button type="submit" class="btn btn-primary">Submit</button>
+      					</div>
+    				</div>
+    			</fieldset>
+    		</form>
+            </div>
+    	</div>
+	</div>
+  	<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  	<script type="text/javascript">
+    	$(document).ready(function() {
+        	$('#id_gaming').multiselect({
+                disableIfEmpty: true
+            });
+        	$('#id_ce').multiselect({
+                disableIfEmpty: true
+            });
+        	$('#id_me').multiselect({
+                disableIfEmpty: true
+            });
+        	$('#id_ee').multiselect({
+                disableIfEmpty: true
+            });
+        	$('#id_eie').multiselect({
+                disableIfEmpty: true
+            });
+        	$('#id_ece').multiselect({
+                disableIfEmpty: true
+            });
+        	$('#id_cseit').multiselect({
+                disableIfEmpty: true
+            });
+        	$('#id_foreveryone').multiselect({
+                disableIfEmpty: true
+            });
+	    });
+	</script>
+</body>
+
+</html>

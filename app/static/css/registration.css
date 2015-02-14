@@ -1,0 +1,105 @@
+body{
+	margin: 0px;
+	background-image: url('../images/pat.jpg');
+	background-size: cover;
+}
+
+.debug, .debug *{
+	outline: 1px solid red;
+}
+
+.pre-text{
+	font-size: 1.3em !important;
+	font-family: cursive;
+}
+.info-box{
+	border-right: 5px solid red;
+	
+}
+.navbar{
+	background-color: #3264cd !important;
+	border: 0px;
+	height: 60px;
+}
+.navbar ul{
+	
+}
+.pull_left{
+	float: left !important;
+}
+.even{
+	font-size: 1.8em;
+	color: #fff !important;
+	font-family: cursive;
+	margin: 12px 10px;
+}
+a{
+	color: #fff !important;
+}
+.regi{
+	font-size: 3em !important;
+	font-family: cursive;
+}
+.mynavig{
+	height: 70px;
+	width: auto;
+	background: -moz-linear-gradient(top, #1d427a, #5186d7);
+}
+
+.mynavig li{
+	display: inline-block;
+	font-size: 2em;
+	padding: 10px 20px;
+	font-family: cursive;
+	color:#fff;
+}
+.padding-set{
+	padding: 80px 0px;
+}
+.padding-set-2{
+	padding: 10px 0px;
+}
+#brand{
+	font-size: 2em;
+	padding: 10px 0px;
+}
+#user{
+	padding: 10px 25px;	
+	font-size: 1.2em;
+	color: #fff;
+	float: right;
+	margin:10px 50px;
+	border-right: 2px solid #fff;
+	border-radius: 5px; 
+	font-family: cursive;
+}
+#logout{
+	padding: 10px 25px;	
+	font-size: 1.2em;
+	color: #fff;
+	float: right;
+	margin:10px -20px; 
+	font-family: cursive;
+	border-radius:20px;
+	background-color: #3355cc;
+}
+#a1{
+	padding: 10px 25px;	
+	font-size: 1.2em;
+	color: #fff;
+	float: right;
+	margin:10px 50px; 
+	border-radius:20px;
+	background-color: #3355cc;
+	font-family: cursive;
+}
+.foot{
+	background-color: #000;
+	width: auto;
+	height:40px;	
+}
+.foot p{
+	font-size: 1.2em;
+	color: #fff;
+	padding: 5px 40px;
+}

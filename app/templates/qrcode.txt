@@ -1,0 +1,7 @@
+Hey {{ name }},
+
+Thanks for registering with us. Please bring the qr code attached in the mail to the college.
+Please bring your college id card and registration card (university) with yourself at the time of the events.
+
+--
+Horizon Team
