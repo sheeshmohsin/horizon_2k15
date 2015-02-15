@@ -133,6 +133,16 @@ class Gaming(models.Model):
 	def __unicode__(self):
 		return self.event_name
 
+class Gallery(models.Model):
+	caption = models.CharField(_('Caption'), max_length=30)
+	picture = models.ImageField(_('Image'), upload_to=get_upload_file_path)
+
+	class Meta:
+		verbose_name_plural = 'Gallery'
+
+	def __unicode__(self):
+		return self.caption
+
 class Registration(models.Model):
 	user = models.ForeignKey(User)
 	name = models.CharField(_('Name'), max_length=40)

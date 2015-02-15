@@ -27,9 +27,10 @@ def home(request):
     me_events = Me.objects.all()
     ce_events = Ce.objects.all()
     gaming_events = Gaming.objects.all()
+    gallery = Gallery.objects.all()
     return render_to_response('basic.html', {'central_events':central_events, 'cse_events':cse_events,
         'ece_events':ece_events, 'eie_events':eie_events, 'ee_events':ee_events, 'me_events':me_events,
-        'ce_events':ce_events, 'gaming_events':gaming_events}, context_instance=RequestContext(request))
+        'ce_events':ce_events, 'gaming_events':gaming_events, 'gallery':gallery }, context_instance=RequestContext(request))
 
 def youtube(request):
     return render_to_response('youtube.html')
