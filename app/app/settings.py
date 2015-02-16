@@ -151,11 +151,21 @@ SOCIALACCOUNT_EMAIL_REQUIRED = True
 
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'
 
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'sheeshmohsin@gmail.com'
-EMAIL_HOST_PASSWORD = 'uniquepiece1'
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+# EMAIL_HOST_USER = 'sheeshmohsin@gmail.com'
+# EMAIL_HOST_PASSWORD = '*****'
+
+########## EMAIL CONFIGURATION
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+DEFAULT_FROM_EMAIL = 'registration@horizonbcrec.in'
+EMAIL_HOST = 'smtp.zoho.com'
+EMAIL_HOST_PASSWORD = 'sheeshmohsin'
+EMAIL_HOST_USER = 'registration@horizonbcrec.in'
+EMAIL_PORT = 465
+EMAIL_USE_SSL = True
+########## END EMAIL CONFIGURATION
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
 # the site admins on every HTTP 500 error when DEBUG=False.

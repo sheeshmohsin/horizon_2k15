@@ -10,7 +10,6 @@ from django.template import RequestContext
 from django.http import HttpResponseRedirect, HttpResponse
 from django.core.mail import send_mail
 from django.core.files import File
-from django.core.mail import send_mail
 from django.core.mail import EmailMultiAlternatives
 from django.template.loader import get_template
 from django.conf import settings
@@ -62,6 +61,8 @@ def profileform(request):
             f = form.save(commit=False)
             f.user = request.user
             mydict = dict(request.POST.iterlists())
+            sum_college = 0
+            sum_another_college = 0
             for key, value in mydict.items():
                 print key, value
                 if key not in field_list:
@@ -71,8 +72,6 @@ def profileform(request):
                         if key in include_field_list:
                             model = getattr(hrzn.models, key.title())
                             event_list = []
-                            sum_college = 0
-                            sum_another_college = 0
                             print key, value
                             for val in value:
                                 print val
@@ -102,7 +101,7 @@ def profileform(request):
             plaintext = get_template('qrcode.txt')
             d = Context({"name":request.user.first_name})
             text_content = plaintext.render(d)
-            msg = EmailMultiAlternatives('Registration', text_content, 'sheeshmohsin@gmail.com', [request.user.email])
+            msg = EmailMultiAlternatives('Registration', text_content, 'registration@horizonbcrec.in', [request.user.email])
             file_url = "media/" + str(request.user.registration_set.all().order_by('-id')[0].qr_code)
             msg.attach_file(os.path.join(settings.BASE_DIR, file_url))
             msg.send()
