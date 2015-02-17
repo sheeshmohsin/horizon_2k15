@@ -11,7 +11,7 @@ class Registrationformins(forms.ModelForm):
         exclude = ('paid','user', 'qr_code')
 
     def __init__(self, *args, **kwargs):
-        super(Registrationform, self).__init__(*args, **kwargs)
+        super(Registrationformins, self).__init__(*args, **kwargs)
         self.fields['name'].widget.attrs.update({'placeholder': 'Participant Name'})
         self.fields['name'].widget.attrs['readonly'] = True
         self.fields['phonenumber'].widget.attrs.update({'placeholder': 'Phone Number'})
