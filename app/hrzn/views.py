@@ -40,7 +40,7 @@ def youtube(request):
 def profile(request):
     if len(request.user.registration_set.all()) == 1:
         obj = request.user.registration_set.all()[0]
-        return render_to_response('profile.html', {'form':Registrationform(instance=obj)}, context_instance=RequestContext(request))
+        return render_to_response('profile.html', {'form':Registrationformins(instance=obj)}, context_instance=RequestContext(request))
     else:
         return render_to_response('profile.html', {'form':Registrationform()}, context_instance=RequestContext(request))
 
@@ -55,7 +55,7 @@ def profileform(request):
         finaldict = dict()
         if len(request.user.registration_set.all()) == 1:
             fobj = request.user.registration_set.all()[0]
-            form = Registrationform(request.POST, instance=fobj)
+            form = Registrationformins(request.POST, instance=fobj)
         else:
             form = Registrationform(request.POST)
         print request.POST
