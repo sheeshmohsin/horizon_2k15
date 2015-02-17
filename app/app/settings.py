@@ -47,7 +47,7 @@ TIME_ZONE = 'Asia/Calcutta'
 # http://www.i18nguy.com/unicode/language-identifiers.html
 LANGUAGE_CODE = 'en-us'
 
-SITE_ID = 1
+SITE_ID = 2
 
 # If you set this to False, Django will make some optimizations so as not
 # to load the internationalization machinery.
@@ -73,11 +73,7 @@ STATIC_ROOT = join(BASE_DIR, 'staticfiles')
 
 # MEDIA CONFIGURATION
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#media-root
-MEDIA_ROOT = join(BASE_DIR, 'media')
-
-# See: https://docs.djangoproject.com/en/dev/ref/settings/#media-url
-MEDIA_URL = '/media/'
-# END MEDIA CONFIGURATION
+# MEDIA_ROOT = join(BASE_DIR, 'media')
 
 # List of finder classes that know how to find static files in
 # various locations.
@@ -137,6 +133,7 @@ INSTALLED_APPS = (
     'bootstrap3',
     'avatar',
     'django_user_agents',
+    'storages',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
@@ -162,12 +159,6 @@ SOCIALACCOUNT_EMAIL_REQUIRED = True
 
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'
 
-# EMAIL_HOST = 'smtp.gmail.com'
-# EMAIL_PORT = 587
-# EMAIL_USE_TLS = True
-# EMAIL_HOST_USER = 'sheeshmohsin@gmail.com'
-# EMAIL_HOST_PASSWORD = '*****'
-
 ########## EMAIL CONFIGURATION
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 DEFAULT_FROM_EMAIL = 'registration@horizonbcrec.in'
@@ -178,15 +169,17 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 ########## END EMAIL CONFIGURATION
 
-########## EMAIL CONFIGURATION
-# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-# DEFAULT_FROM_EMAIL = 'contact@cannyprice.com'
-# EMAIL_HOST = 'smtp.zoho.com'
-# EMAIL_HOST_PASSWORD = 'cannyprices'
-# EMAIL_HOST_USER = 'contact@cannyprice.com'
-# EMAIL_PORT = 587
-# EMAIL_USE_TLS = True
-########## END EMAIL CONFIGURATION
+AWS_STORAGE_BUCKET_NAME = 'horizonbcrec'
+AWS_ACCESS_KEY_ID = 'AKIAIX5TIQDAWYS4ID6A'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+
+# See: https://docs.djangoproject.com/en/dev/ref/settings/#media-url
+#MEDIA_URL = '/media/'
+MEDIA_URL = "https://%s/" % AWS_S3_CUSTOM_DOMAIN
+# END MEDIA CONFIGURATION
+
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to

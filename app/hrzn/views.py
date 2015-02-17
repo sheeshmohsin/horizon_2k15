@@ -1,7 +1,9 @@
 import os
 import hrzn
 import urllib
+import urllib2
 
+from django.conf import settings
 from django.shortcuts import render_to_response
 from hrzn.forms import *
 from hrzn.models import *
@@ -40,7 +42,7 @@ def profile(request):
         obj = request.user.registration_set.all()[0]
         return render_to_response('profile.html', {'form':Registrationform(instance=obj)}, context_instance=RequestContext(request))
     else:
-        return render_to_response('profile.html', {'form':Registrationform}, context_instance=RequestContext(request))
+        return render_to_response('profile.html', {'form':Registrationform()}, context_instance=RequestContext(request))
 
 @login_required
 def profileform(request):
@@ -99,11 +101,11 @@ def profileform(request):
             f.qr_code = File(open(image[0]))
             f.save()
             plaintext = get_template('qrcode.txt')
-            d = Context({"name":request.user.first_name})
+            file_url = str(request.user.registration_set.all().order_by('-id')[0].qr_code)
+            # msg.attach_file(urllib2.urlopen())
+            d = Context({"name":request.user.first_name, "url":os.path.join("https://%s/" % settings.AWS_S3_CUSTOM_DOMAIN, file_url)})
             text_content = plaintext.render(d)
             msg = EmailMultiAlternatives('Registration', text_content, 'registration@horizonbcrec.in', [request.user.email])
-            file_url = "media/" + str(request.user.registration_set.all().order_by('-id')[0].qr_code)
-            msg.attach_file(os.path.join(settings.BASE_DIR, file_url))
             msg.send()
             return HttpResponseRedirect('/thankyou/')
         else:

@@ -9,6 +9,7 @@ class Registrationform(forms.ModelForm):
         
         # exclude these fields
         exclude = ('paid','user', 'qr_code')
+
     def __init__(self, *args, **kwargs):
         super(Registrationform, self).__init__(*args, **kwargs)
         self.fields['name'].widget.attrs.update({'placeholder': 'Participant Name'})
