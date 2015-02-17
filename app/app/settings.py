@@ -163,9 +163,20 @@ DEFAULT_FROM_EMAIL = 'registration@horizonbcrec.in'
 EMAIL_HOST = 'smtp.zoho.com'
 EMAIL_HOST_PASSWORD = 'sheeshmohsin'
 EMAIL_HOST_USER = 'registration@horizonbcrec.in'
-EMAIL_PORT = 465
-EMAIL_USE_SSL = True
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
 ########## END EMAIL CONFIGURATION
+
+########## EMAIL CONFIGURATION
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# DEFAULT_FROM_EMAIL = 'contact@cannyprice.com'
+# EMAIL_HOST = 'smtp.zoho.com'
+# EMAIL_HOST_PASSWORD = 'cannyprices'
+# EMAIL_HOST_USER = 'contact@cannyprice.com'
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+########## END EMAIL CONFIGURATION
+
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
 # the site admins on every HTTP 500 error when DEBUG=False.
