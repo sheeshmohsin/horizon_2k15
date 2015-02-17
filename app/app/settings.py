@@ -21,7 +21,7 @@ DATABASES = {
 }
 
 TEMPLATE_DIRS = (
-    os.path.join(BASE_DIR, 'templates')
+    os.path.join(BASE_DIR, 'templates'),
 )
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
