@@ -1,0 +1,63 @@
+{% extends "account/base.html" %}
+
+{% load url from future %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+{% load nearest_extras %}
+
+{% block content %}
+<div class="container">
+<div class = "row">
+	<div class="col-lg-6">
+<form class="signup form-horizontal" id="signup_form" method="post" action="{% url 'account_signup' %}">{% csrf_token %}
+	<fieldset>
+		<legend>Dispensary Sign Up (FREE!)</legend>
+		<p>Already have an account? Then please <a href="{{ login_url }}">sign in</a>.</p>
+		{{ form.non_field_errors }}
+		<div class="form-group">
+			<label for="id_username" class="col-lg-4 control-label">Username</label>
+			<div class="col-lg-8">
+				{{ form.username|addcss:"form-control,Username" }}
+				{{ form.username.errors }}
+			 </div>
+    	</div>
+    	<div class="form-group">
+			<label for="id_email" class="col-lg-4 control-label">Email</label>
+			<div class="col-lg-8">
+				{{ form.email|addcss:"form-control,Email" }}
+				{{ form.email.errors }}
+			 </div>
+    	</div>
+    	<div class="form-group">
+			<label for="id_password1" class="col-lg-4 control-label">Password</label>
+			<div class="col-lg-8">
+				{{ form.password1|addcss:"form-control,Password" }}
+				{{ form.password1.errors }}
+			 </div>
+    	</div>
+    	<div class="form-group">
+			<label for="id_password2" class="col-lg-4 control-label">Confirm Password</label>
+			<div class="col-lg-8">
+				{{ form.password2|addcss:"form-control,Confirm Password" }}
+				{{ form.password2.errors }}
+			 </div>
+    	</div>
+    	<div class="form-group">
+      		<div class="col-lg-8 col-lg-offset-4">
+        		<button class="btn btn-default" type="button">Cancel</button>
+        		<button type="submit" class="btn btn-primary">Sign Up &raquo;</button>
+      		</div>
+    	</div>
+  		{% if redirect_field_value %}
+  			<input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+  		{% endif %}
+  	</fieldset>
+</form>
+	</div>
+</div>
+</div>
+{% include "footer.html" %}
+
+{% endblock content %}
+
+

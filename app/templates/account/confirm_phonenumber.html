@@ -1,0 +1,41 @@
+{% extends "account/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}User: {{ username }}{% endblock %}
+
+{% block content %}
+
+<div class="container marketing">
+    <div class="row">
+        <div class="col-lg-5">
+            <h3>{% block header %}User: {{ request.user.username }}{% endblock %}</h3>
+            <form class="form-horizontal" method="post" action="{% url 'users:confirm_phonenumber' %}" id="verify-form">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <div class="control-group">
+                    <div class="controls col-lg-offset-10">
+                        <button type="submit" class="btn">Confirm</button>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="col-lg-10">
+                        <span class="help-block"><a href="#" onclick="resend();">Click here</a> to resend verification code.</span>
+                        <script>
+                            function resend(event){
+                                $.ajax({
+                                    url: "/accounts/resend/",
+                                    success: function(response) {
+                                                alert(response)
+                                            }
+                                })
+                                event.preventDefault();
+                            }
+                        </script>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% include "footer.html" %}
+{% endblock %}

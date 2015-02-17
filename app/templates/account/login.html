@@ -1,0 +1,36 @@
+{% extends "account/base.html" %}
+{% load static %}
+{% load i18n %}
+{% load account %}
+{% load nearest_extras %}
+{% load url from future %}
+{% load crispy_forms_tags %}
+
+{% block excss %}
+    <link rel="stylesheet" href="{% static "css/signin.css" %}">
+{% endblock %}
+
+{% block content %}
+<div class="container" id="container">
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+
+      <form class="login form-signin" method="POST" action="{% url 'account_login' %}">{% csrf_token %}
+        <h2 class="form-signin-heading">Please sign in</h2>
+        {{ form.login|addcss:"form-control,Username" }}
+        {{ form.password|addcss:"form-control,Password" }}
+        {{ form.remember }} Remember me
+        {% if redirect_field_value %}
+        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+        {% endif %}
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button><hr>
+        <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
+      <p>Not Registered yet, Click <a href="/accounts/signup/">{% trans "here" %}</a> to register</p>
+      </form>
+    </div>
+    <div class="col-md-4"></div>
+  </div>
+</div>
+{% include "footer.html" %}
+{% endblock %}
