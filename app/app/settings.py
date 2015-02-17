@@ -96,6 +96,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     # Uncomment the next line for simple clickjacking protection:
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django_user_agents.middleware.UserAgentMiddleware',
 )
 
 AUTHENTICATION_BACKENDS = (
@@ -126,6 +127,7 @@ INSTALLED_APPS = (
     'allauth.socialaccount.providers.google',
     'bootstrap3',
     'avatar',
+    'django_user_agents',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
