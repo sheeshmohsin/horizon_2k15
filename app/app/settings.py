@@ -13,12 +13,21 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
+# Database
+# https://docs.djangoproject.com/en/1.6/ref/settings/#databases
+# DATABASES = values.DatabaseURLValue('postgres://animate_web@localhost/animate_web')
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        #'NAME': normpath(join(DJANGO_ROOT,'hotelnow')), # for sqllite
+        'NAME': 'horizon',
+        'USER': 'sheeshmohsin',
+        'PASSWORD': 'sheeshmohsin',
+        'HOST': 'sheeshmohsin.cklrsxrygcj7.us-west-2.rds.amazonaws.com',
+        'PORT': '3306',
     }
 }
+# END DATABASE CONFIGURATION
 
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, 'templates'),
