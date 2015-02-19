@@ -100,6 +100,7 @@ def profileform(request):
             image = urllib.urlretrieve(image_url)
             f.qr_code = File(open(image[0]))
             f.save()
+            form.save_m2m()
             plaintext = get_template('qrcode.txt')
             file_url = str(request.user.registration_set.all().order_by('-id')[0].qr_code)
             # msg.attach_file(urllib2.urlopen())
