@@ -144,10 +144,44 @@ class Gallery(models.Model):
 		return self.caption
 
 class Registration(models.Model):
+	DEPT_CHOICES = (
+		('CSE 1st year', 'CSE 1st year'),
+		('CSE 2nd year', 'CSE 2nd year'),
+		('CSE 3rd year', 'CSE 3rd year'),
+		('CSE 4th year', 'CSE 4th year'),
+		('IT 1st year', 'IT 1st year'),
+		('IT 2nd year', 'IT 2nd year'),
+		('IT 3rd year', 'IT 3rd year'),
+		('IT 4th year', 'IT 4th year'),
+		('ECE 1st year', 'ECE 1st year'),
+		('ECE 2nd year', 'ECE 2nd year'),
+		('ECE 3rd year', 'ECE 3rd year'),
+		('ECE 4th year', 'ECE 4th year'),	
+		('EE 1st year', 'EE 1st year'),
+		('EE 2nd year', 'EE 2nd year'),
+		('EE 3rd year', 'EE 3rd year'),
+		('EE 4th year', 'EE 4th year'),
+		('EIE 1st year', 'EIE 1st year'),
+		('EIE 2nd year', 'EIE 2nd year'),
+		('EIE 3rd year', 'EIE 3rd year'),
+		('EIE 4th year', 'EIE 4th year'),
+		('ME 1st year', 'ME 1st year'),
+		('ME 2nd year', 'ME 2nd year'),
+		('ME 3rd year', 'ME 3rd year'),
+		('ME 4th year', 'ME 4th year'),
+		('CE 1st year', 'CE 1st year'),
+		('CE 2nd year', 'CE 2nd year'),
+		('CE 3rd year', 'CE 3rd year'),
+		('CE 4th year', 'CE 4th year'),
+		('BCA', 'BCA'),
+		('MCA', 'MCA'),
+		('Others', 'Others'),
+	)
 	user = models.ForeignKey(User)
 	name = models.CharField(_('Name'), max_length=40)
 	phonenumber = models.CharField(_('Phone Number'), max_length=10)
 	college = models.CharField(_('College Name'), max_length=50)
+	dept = models.CharField(_('Department/Year'), max_length=15)
 	foreveryone = models.ManyToManyField(Foreveryone, blank=True)
 	cseit = models.ManyToManyField(Cseit, blank=True)
 	ece = models.ManyToManyField(Ece, blank=True)
