@@ -178,7 +178,7 @@ class Registration(models.Model):
 		('Others', 'Others'),
 	)
 	user = models.ForeignKey(User)
-	name = models.CharField(_('Name'), max_length=40)
+	name = models.CharField(_('Name'), max_length=40, help_text="Be careful while entering name, user can't edit their names later")
 	phonenumber = models.CharField(_('Phone Number'), max_length=10)
 	college = models.CharField(_('College Name'), max_length=50)
 	dept = models.CharField(_('Department/Year'), max_length=15, choices=DEPT_CHOICES)
