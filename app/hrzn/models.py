@@ -181,7 +181,7 @@ class Registration(models.Model):
 	name = models.CharField(_('Name'), max_length=40)
 	phonenumber = models.CharField(_('Phone Number'), max_length=10)
 	college = models.CharField(_('College Name'), max_length=50)
-	dept = models.CharField(_('Department/Year'), max_length=15)
+	dept = models.CharField(_('Department/Year'), max_length=15, choices=DEPT_CHOICES)
 	foreveryone = models.ManyToManyField(Foreveryone, blank=True)
 	cseit = models.ManyToManyField(Cseit, blank=True)
 	ece = models.ManyToManyField(Ece, blank=True)
