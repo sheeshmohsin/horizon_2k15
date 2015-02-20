@@ -464,7 +464,7 @@ function popup(event_name, event_description, event_mentor, event_mentor_email, 
 	event_name = event_name + ' (Contact Person)';
     $('.modal-title').text(event_name);
     $('#eventDescription').text(event_description);
-    src = '/media/'+String(event_mentor_pic);
+    src = 'https://horizonbcrec.s3.amazonaws.com/'+String(event_mentor_pic);
     $('#mentor_pic').attr("src", src);
     $('#mentor_name').text(event_mentor);
     $('#mentor_email').text(event_mentor_email);
