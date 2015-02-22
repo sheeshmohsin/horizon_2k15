@@ -343,8 +343,8 @@
 					    <ul class="unstyled thumbnails row gallery" >
 					    	{% for photo in gallery %}
 					    				    			<li class="span3">
-								<a href="/media/{{photo.picture}}" class="swipebox magnifier" title ="{{photo.caption}}" style="display:block;text-align:center;">
-									<img width="270" height="270" src="/media/{{photo.picture}}" class="img-circle" alt="{{photo.caption}}" />								</a>
+								<a href="https://horizonbcrec.s3.amazonaws.com/{{photo.picture}}" class="swipebox magnifier" title ="{{photo.caption}}" style="display:block;text-align:center;">
+									<img width="270" height="270" src="https://horizonbcrec.s3.amazonaws.com/{{photo.picture}}" class="img-circle" alt="{{photo.caption}}" />								</a>
 							</li>
 							{% endfor %}
 													</ul>
