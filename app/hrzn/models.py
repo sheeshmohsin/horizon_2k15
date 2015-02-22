@@ -14,6 +14,7 @@ class Foreveryone(models.Model):
 	mentor_email = models.EmailField(_('Mentor Email'), max_length=60, null=True, blank=True)
 	mentor_number = models.CharField(_('Mentor Phone Number'), max_length=10, null=True, blank=True)
 	mentor_pic = models.ImageField(upload_to=get_upload_file_path, null=True, blank=True)
+	document_url = models.URLField(max_length=300, null=True, blank=True)
 
 	class Meta:
 		verbose_name_plural = 'Foreveryone'
@@ -30,6 +31,7 @@ class Cseit(models.Model):
 	mentor_email = models.EmailField(_('Mentor Email'), max_length=60, null=True, blank=True)
 	mentor_number = models.CharField(_('Mentor Phone Number'), max_length=10, null=True, blank=True)
 	mentor_pic = models.ImageField(upload_to=get_upload_file_path, null=True, blank=True)
+	document_url = models.URLField(max_length=300, null=True, blank=True)
 
 	class Meta:
 		verbose_name_plural = 'Cseit'
@@ -46,6 +48,7 @@ class Ece(models.Model):
 	mentor_email = models.EmailField(_('Mentor Email'), max_length=60, null=True, blank=True)
 	mentor_number = models.CharField(_('Mentor Phone Number'), max_length=10, null=True, blank=True)
 	mentor_pic = models.ImageField(upload_to=get_upload_file_path, null=True, blank=True)
+	document_url = models.URLField(max_length=300, null=True, blank=True)
 
 	class Meta:
 		verbose_name_plural = 'Ece'
@@ -62,6 +65,7 @@ class Eie(models.Model):
 	mentor_email = models.EmailField(_('Mentor Email'), max_length=60, null=True, blank=True)
 	mentor_number = models.CharField(_('Mentor Phone Number'), max_length=10, null=True, blank=True)
 	mentor_pic = models.ImageField(upload_to=get_upload_file_path, null=True, blank=True)
+	document_url = models.URLField(max_length=300, null=True, blank=True)
 
 	class Meta:
 		verbose_name_plural = 'Eie'
@@ -78,6 +82,7 @@ class Ee(models.Model):
 	mentor_email = models.EmailField(_('Mentor Email'), max_length=60, null=True, blank=True)
 	mentor_number = models.CharField(_('Mentor Phone Number'), max_length=10, null=True, blank=True)
 	mentor_pic = models.ImageField(upload_to=get_upload_file_path, null=True, blank=True)
+	document_url = models.URLField(max_length=300, null=True, blank=True)
 
 	class Meta:
 		verbose_name_plural = 'Ee'
@@ -94,6 +99,7 @@ class Me(models.Model):
 	mentor_email = models.EmailField(_('Mentor Email'), max_length=60, null=True, blank=True)
 	mentor_number = models.CharField(_('Mentor Phone Number'), max_length=10, null=True, blank=True)
 	mentor_pic = models.ImageField(upload_to=get_upload_file_path, null=True, blank=True)
+	document_url = models.URLField(max_length=300, null=True, blank=True)
 
 	class Meta:
 		verbose_name_plural = 'Me'
@@ -110,6 +116,7 @@ class Ce(models.Model):
 	mentor_email = models.EmailField(_('Mentor Email'), max_length=60, null=True, blank=True)
 	mentor_number = models.CharField(_('Mentor Phone Number'), max_length=10, null=True, blank=True)
 	mentor_pic = models.ImageField(upload_to=get_upload_file_path, null=True, blank=True)
+	document_url = models.URLField(max_length=300, null=True, blank=True)
 
 	class Meta:
 		verbose_name_plural = 'Ce'
@@ -126,6 +133,7 @@ class Gaming(models.Model):
 	mentor_email = models.EmailField(_('Mentor Email'), max_length=60, null=True, blank=True)
 	mentor_number = models.CharField(_('Mentor Phone Number'), max_length=10, null=True, blank=True)
 	mentor_pic = models.ImageField(upload_to=get_upload_file_path, null=True, blank=True)
+	document_url = models.URLField(max_length=300, null=True, blank=True)
 
 	class Meta:
 		verbose_name_plural = 'Gaming'
