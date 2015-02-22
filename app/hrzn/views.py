@@ -3,6 +3,7 @@ import hrzn
 import urllib
 import urllib2
 
+from django.contrib import messages
 from django.conf import settings
 from django.shortcuts import render_to_response
 from hrzn.forms import *
@@ -123,3 +124,40 @@ def limited(request):
 def thankyou(request):
     return render_to_response('thankyou.html', context_instance=RequestContext(request))
 
+@login_required
+def treasurehunt(request):
+    answerset = request.user.crypto_set.all()
+    if len(answerset) == 0:
+        template_name = 'crypto/first.html'
+    elif len(answerset) == 1:
+        template_name = 'crypto/second.html'
+    elif len(answerset) == 2:
+        template_name = 'crypto/third.html'
+    elif len(answerset) == 3:
+        template_name = 'crypto/fourth.html'
+    elif len(answerset) == 4:
+        template_name = 'crypto/five.html'
+    elif len(answerset) == 5:
+        template_name = 'crypto/sixth.html'
+    elif len(answerset) == 6:
+        template_name = 'crypto/seventh.html'
+    elif len(answerset) == 7:
+        template_name = 'crypto/eighth.html'
+    elif len(answerset) == 8:
+        template_name = 'crypto/ninth.html'
+    elif len(answerset) == 9:
+        template_name = 'crypto/tenth.html'
+    return render_to_response(template_name, context_instance=RequestContext(request))
+
+@login_required
+def treasureanswer(request):
+    qno = request.POST["qno"]
+    answer = request.POST["answer"]
+    if answer == Crypto_answer.objects.get(qno=qno).answer:
+        a = Crypto(user=request.user, qno=qno, answer=answer)
+        a.save()
+        messages.info(request, 'Congo! Correct Answer')
+        return HttpResponseRedirect('/treasurehunt/')
+    else:
+        messages.warning(request, 'Wrong Answer')
+        return HttpResponseRedirect('/treasurehunt/')

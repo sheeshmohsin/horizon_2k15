@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Horizon 2K15 | Treasure Hunt</title>
+<link type="text/css" rel="stylesheet" href="/static/css/stylo.css"/>
+<link type="text/css" rel="stylesheet" href="/static/css/bootstrap.css"/>
+</head>
+<body>
+
+    <div class="mynav">
+        <ul>
+            <li id="game-heading">Treasure Hunt</li>
+            <li><a href="#rules" data-toggle="modal">Rules</a></li>
+            <li>Contact</li>
+        </ul>
+    </div>
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    <div class="header">
+        <div class="row-fluid">
+            
+            <div class="span12">
+                    
+            </div>
+            
+            <div class="span7">
+                {% block question %}
+                <img src="/static/images/jimmy hendrix.jpg"/>
+                {% endblock %}
+            </div>
+            
+            <div class="span4">
+                <div class="hint">
+                    <h2>Hint</h2>
+                    {% block hint %}
+                    {% endblock %}
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <div class="answer-space">
+    <form method="post" action="/treasure/answer/">
+        <div class="input-sector">
+            <div class="span4">
+                {% block qno %}
+                <input type="hidden" name="qno" value="1" />
+                {% endblock %}
+                <input type="text" name="answer" placeholder="Type Your Answer Here" class="info"/>
+            </div>
+            <div class="span4">
+                <button type="button" class="btn btn-success shift" value="Submit">Submit</button>
+            </div>
+        </div>
+    </form>
+        
+    </div>
+    <div id="rules" class="modal hide fade">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h3>Rules</h3>
+        </div>
+        <div class="modal-body">
+            <ul>
+                <li>Every level has an answer that'll take you to the next level.</li>
+                <li>In this game any thing can be a clue. You need an open mind with good observations.</li>
+                <li>All answers are lowercase characters or number 0-9. Spaces, special characters are not allowed.</li>
+                <li>If the answer is <strong>Hello World</strong>, then concatenate  it to <strong>helloworld.</strong></li>
+                <li>For hints or questions, please refer to the <a href="https://www.facebook.com/hrzn2k15">Facebook page</a></li>
+                <li>In case you win, you might be asked for the answers to all the levels. Please note them down somewhere.</li>
+                <li>The decision of the Horizon 2015 committee is final and binding in case of any disputes.</li>
+                <li>Larry Page and Sergey Brin devised a search engine. Try to use it extensively.</li>
+        </div>
+        <div class="modal-footer">
+            <a data-dismiss="modal" class="btn">Close</a>
+        </div>
+    </div>
+    <script src="/static/js/jquery-1.7.min.js"></script>
+    <script src="/static/js/bootstrap-modal.js"></script>
+</body>
+</html>

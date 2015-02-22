@@ -206,3 +206,24 @@ class Registration(models.Model):
 
 	def __unicode__(self):
 		return self.name
+
+class Crypto(models.Model):
+	user = models.ForeignKey(User)
+	qno = models.CharField(max_length=3, unique=True)
+	answer = models.CharField(max_length=30)
+
+	class Meta:
+		verbose_name_plural = 'Crypto'
+
+	def __unicode__(self):
+		return self.qno
+
+class Cryptoanswer(models.Model):
+	qno = models.CharField(max_length=3, unique=True)
+	answer = models.CharField(max_length=30)
+
+	class Meta:
+		verbose_name_plural = 'Cryptoanswer'
+
+	def __unicode__(self):
+		return self.qno

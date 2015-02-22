@@ -13,6 +13,8 @@ urlpatterns = patterns('',
     url(r'^profileform/$', 'hrzn.views.profileform', name='profileform'),
     url(r'^limitedsubmission/$', 'hrzn.views.limited', name='limited'),
     url(r'^thankyou/$', 'hrzn.views.thankyou', name='thankyou'),
+    url(r'^treasurehunt/$', 'hrzn.views.treasurehunt', name='treasurehunt'),
+    url(r'^treasure/answer/$', 'hrzn.views.treasureanswer', name='treasureanswer'),
     url(r'^accounts/logout/$', 'django.contrib.auth.views.logout', {'next_page': '/'}),
     # url(r'^app/', include('app.foo.urls')),
 
