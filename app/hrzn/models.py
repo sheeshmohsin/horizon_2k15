@@ -227,3 +227,13 @@ class Cryptoanswer(models.Model):
 
 	def __unicode__(self):
 		return self.qno
+
+class Cryptoquestion(models.Model):
+	qno = models.CharField(max_length=3, unique=True)
+	question = models.ImageField(upload_to=get_upload_file_path)
+
+	class Meta:
+		verbose_name_plural = 'Cryptoquestion'
+
+	def __unicode__(self):
+		return self.qno

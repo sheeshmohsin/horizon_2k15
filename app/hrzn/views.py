@@ -128,26 +128,36 @@ def thankyou(request):
 def treasurehunt(request):
     answerset = request.user.crypto_set.all()
     if len(answerset) == 0:
+        question = Cryptoquestion.objects.get(qno='1')
         template_name = 'crypto/first.html'
     elif len(answerset) == 1:
+        question = Cryptoquestion.objects.get(qno='2')
         template_name = 'crypto/second.html'
     elif len(answerset) == 2:
+        question = Cryptoquestion.objects.get(qno='3')
         template_name = 'crypto/third.html'
     elif len(answerset) == 3:
+        question = Cryptoquestion.objects.get(qno='4')
         template_name = 'crypto/fourth.html'
     elif len(answerset) == 4:
+        question = Cryptoquestion.objects.get(qno='5')
         template_name = 'crypto/five.html'
     elif len(answerset) == 5:
+        question = Cryptoquestion.objects.get(qno='6')
         template_name = 'crypto/sixth.html'
     elif len(answerset) == 6:
+        question = Cryptoquestion.objects.get(qno='7')
         template_name = 'crypto/seventh.html'
     elif len(answerset) == 7:
+        question = Cryptoquestion.objects.get(qno='8')
         template_name = 'crypto/eighth.html'
     elif len(answerset) == 8:
+        question = Cryptoquestion.objects.get(qno='9')
         template_name = 'crypto/ninth.html'
     elif len(answerset) == 9:
+        question = Cryptoquestion.objects.get(qno='10')
         template_name = 'crypto/tenth.html'
-    return render_to_response(template_name, context_instance=RequestContext(request))
+    return render_to_response(template_name,{'question':question}, context_instance=RequestContext(request))
 
 @login_required
 def treasureanswer(request):
