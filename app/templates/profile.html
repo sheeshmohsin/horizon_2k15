@@ -41,7 +41,7 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="/treasurehunt/">Launch Treasure Hunt</a></li>
+            <li><a href="/treasurehunt/" id="treasure">Launch Treasure Hunt</a></li>
             <li><a href="/profile"><span class="glyphicon icon-color">Hi, {{ request.user.first_name }}</span></a></li>
             <li><a href="/"><span class="glyphicon glyphicon-home icon-color"></span></a></li>
             <li><a href="/accounts/logout/"><span class="glyphicon glyphicon-log-out icon-color"></span></a></li>
@@ -171,6 +171,10 @@
 }
 .footer_link {
     color : #C7C7C7;    
+}
+#treasure{
+  color:white;
+  font-weight: bold;
 }
 </style>
 
