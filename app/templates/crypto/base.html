@@ -17,7 +17,7 @@
     {% if messages %}
     <ul class="messages">
         {% for message in messages %}
-        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        <li{% if message.tags %} class="alert alert-{{ message.tags }}"{% endif %}>{{ message }}</li>
         {% endfor %}
     </ul>
     {% endif %}
@@ -45,7 +45,7 @@
         </div>
     </div>
     <div class="answer-space">
-    <form method="post" action="/treasure/answer/">
+    <form method="post" action="/treasure/answer/">{% csrf_token %}
         <div class="input-sector">
             <div class="span4">
                 {% block qno %}
@@ -54,7 +54,7 @@
                 <input type="text" name="answer" placeholder="Type Your Answer Here" class="info"/>
             </div>
             <div class="span4">
-                <button type="button" class="btn btn-success shift" value="Submit">Submit</button>
+                <button type="submit" class="btn btn-success shift" value="Submit">Submit</button>
             </div>
         </div>
     </form>

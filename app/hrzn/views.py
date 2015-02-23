@@ -153,7 +153,7 @@ def treasurehunt(request):
 def treasureanswer(request):
     qno = request.POST["qno"]
     answer = request.POST["answer"]
-    if answer == Crypto_answer.objects.get(qno=qno).answer:
+    if answer == Cryptoanswer.objects.get(qno=qno).answer:
         a = Crypto(user=request.user, qno=qno, answer=answer)
         a.save()
         messages.info(request, 'Congo! Correct Answer')
