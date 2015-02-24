@@ -209,7 +209,7 @@ class Registration(models.Model):
 
 class Crypto(models.Model):
 	user = models.ForeignKey(User)
-	qno = models.CharField(max_length=3, unique=True)
+	qno = models.CharField(max_length=3)
 	answer = models.CharField(max_length=30)
 
 	class Meta:
