@@ -5,7 +5,9 @@
 {% endblock %}
 
 {% block hint %}
-{{ question.hint }}
+{% if question.hint %}
+<span style="color:white">{{ question.hint }}</span>
+{% endif %}
 {% endblock %}
 
 {% block qno %}
