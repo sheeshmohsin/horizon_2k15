@@ -231,6 +231,7 @@ class Cryptoanswer(models.Model):
 class Cryptoquestion(models.Model):
 	qno = models.CharField(max_length=3, unique=True)
 	question = models.ImageField(upload_to=get_upload_file_path)
+	hint = models.CharField(max_length=300, null=True, blank=True)
 
 	class Meta:
 		verbose_name_plural = 'Cryptoquestion'
