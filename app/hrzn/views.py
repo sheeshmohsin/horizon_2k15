@@ -127,36 +127,55 @@ def thankyou(request):
 @login_required
 def treasurehunt(request):
     answerset = request.user.crypto_set.all()
+    length = len(answerset)
     if len(answerset) == 0:
         question = Cryptoquestion.objects.get(qno='1')
         template_name = 'crypto/first.html'
-    elif len(answerset) == 1:
+    elif answerset[int(length)-1].qno == '1':
         question = Cryptoquestion.objects.get(qno='2')
         template_name = 'crypto/second.html'
-    elif len(answerset) == 2:
+    elif answerset[int(length)-1].qno == '2':
         question = Cryptoquestion.objects.get(qno='3')
         template_name = 'crypto/third.html'
-    elif len(answerset) == 3:
+    elif answerset[int(length)-1].qno == '3':
         question = Cryptoquestion.objects.get(qno='4')
         template_name = 'crypto/fourth.html'
-    elif len(answerset) == 4:
+    elif answerset[int(length)-1].qno == '4':
         question = Cryptoquestion.objects.get(qno='5')
         template_name = 'crypto/five.html'
-    elif len(answerset) == 5:
+    elif answerset[int(length)-1].qno == '5':
         question = Cryptoquestion.objects.get(qno='6')
         template_name = 'crypto/sixth.html'
-    elif len(answerset) == 6:
+    elif answerset[int(length)-1].qno == '6':
         question = Cryptoquestion.objects.get(qno='7')
         template_name = 'crypto/seventh.html'
-    elif len(answerset) == 7:
+    elif answerset[int(length)-1].qno == '7':
         question = Cryptoquestion.objects.get(qno='8')
         template_name = 'crypto/eighth.html'
-    elif len(answerset) == 8:
+    elif answerset[int(length)-1].qno == '8':
         question = Cryptoquestion.objects.get(qno='9')
         template_name = 'crypto/ninth.html'
-    elif len(answerset) == 9:
+    elif answerset[int(length)-1].qno == '9':
         question = Cryptoquestion.objects.get(qno='10')
         template_name = 'crypto/tenth.html'
+    elif answerset[int(length)-1].qno == '10':
+        question = Cryptoquestion.objects.get(qno='11')
+        template_name = 'crypto/eleventh.html'
+    elif answerset[int(length)-1].qno == '11':
+        question = Cryptoquestion.objects.get(qno='12')
+        template_name = 'crypto/twelveth.html'
+    elif answerset[int(length)-1].qno == '12':
+        question = Cryptoquestion.objects.get(qno='13')
+        template_name = 'crypto/thirteen.html'
+    elif answerset[int(length)-1].qno == '13':
+        question = Cryptoquestion.objects.get(qno='14')
+        template_name = 'crypto/fourteen.html'
+    elif answerset[int(length)-1].qno == '14':
+        question = Cryptoquestion.objects.get(qno='15')
+        template_name = 'crypto/fifteen.html'
+    elif answerset[int(length)-1].qno == '15':
+        question = Cryptoquestion.objects.get(qno='16')
+        template_name = 'crypto/congrats.html'
     return render_to_response(template_name,{'question':question}, context_instance=RequestContext(request))
 
 @login_required

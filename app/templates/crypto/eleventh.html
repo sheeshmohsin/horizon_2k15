@@ -1,0 +1,16 @@
+{% extends "crypto/base.html" %}
+
+{% block question %}
+    <img src="https://horizonbcrec.s3.amazonaws.com/{{question.question}}"/>
+{% endblock %}
+
+{% block hint %}
+{% if question.hint %}
+<span style="color:white;font-size:1.6em;font-family: 'Lobster', cursive;">{{ question.hint }}</span>
+{% endif %}
+{% endblock %}
+
+{% block qno %}
+<input type="hidden" name="qno" value="11" />
+{% endblock %}
+
