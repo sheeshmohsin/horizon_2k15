@@ -13,21 +13,29 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
-# Database
-# https://docs.djangoproject.com/en/1.6/ref/settings/#databases
-# DATABASES = values.DatabaseURLValue('postgres://animate_web@localhost/animate_web')
+# # Database
+# # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
+# # DATABASES = values.DatabaseURLValue('postgres://animate_web@localhost/animate_web')
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         #'NAME': normpath(join(DJANGO_ROOT,'hotelnow')), # for sqllite
+#         'NAME': 'horizon',
+#         'USER': 'sheeshmohsin',
+#         'PASSWORD': 'sheeshmohsin',
+#         'HOST': 'sheeshmohsin.cklrsxrygcj7.us-west-2.rds.amazonaws.com',
+#         'PORT': '3306',
+#     }
+# }
+# # END DATABASE CONFIGURATION
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        #'NAME': normpath(join(DJANGO_ROOT,'hotelnow')), # for sqllite
-        'NAME': 'horizon',
-        'USER': 'sheeshmohsin',
-        'PASSWORD': 'sheeshmohsin',
-        'HOST': 'sheeshmohsin.cklrsxrygcj7.us-west-2.rds.amazonaws.com',
-        'PORT': '3306',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-# END DATABASE CONFIGURATION
+
+
 
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, 'templates'),
@@ -35,7 +43,7 @@ TEMPLATE_DIRS = (
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -47,7 +55,7 @@ TIME_ZONE = 'Asia/Calcutta'
 # http://www.i18nguy.com/unicode/language-identifiers.html
 LANGUAGE_CODE = 'en-us'
 
-SITE_ID = 2
+SITE_ID = 1
 
 # If you set this to False, Django will make some optimizations so as not
 # to load the internationalization machinery.
@@ -86,12 +94,7 @@ STATICFILES_FINDERS = (
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = '386ihj$f3bc=cvp0nt@ly5_^6ql_pc03y6-@6v-3o-sus^10g4'
 
-# List of callables that know how to import templates from various sources.
-TEMPLATE_LOADERS = (
-    'django.template.loaders.filesystem.Loader',
-    'django.template.loaders.app_directories.Loader',
-#     'django.template.loaders.eggs.Loader',
-)
+
 
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
@@ -133,15 +136,51 @@ INSTALLED_APPS = (
     'bootstrap3',
     'avatar',
     'django_user_agents',
-    'storages',
+    #'storages',
 )
 
-TEMPLATE_CONTEXT_PROCESSORS = (
-    "django.core.context_processors.request",
-    "allauth.account.context_processors.account",
-    "django.contrib.auth.context_processors.auth",
-    "allauth.socialaccount.context_processors.socialaccount",
-)
+# # List of callables that know how to import templates from various sources.
+# TEMPLATE_LOADERS = (
+#     'django.template.loaders.filesystem.Loader',
+#     'django.template.loaders.app_directories.Loader',
+# #     'django.template.loaders.eggs.Loader',
+# )
+
+# TEMPLATE_CONTEXT_PROCESSORS = (
+#     "django.core.context_processors.request",
+#     "allauth.account.context_processors.account",
+#     "django.contrib.auth.context_processors.auth",
+#     "allauth.socialaccount.context_processors.socialaccount",
+# )
+
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [os.path.join(BASE_DIR,'templates')],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+
+                
+                # `allauth` needs this from django
+                'django.template.context_processors.request',
+                 # allauth specific context processors
+                #"allauth.account.context_processors.account",
+                #"allauth.socialaccount.context_processors.socialaccount",
+            ],
+        },
+    },
+]
+
+
+
+
+
+
 
 SOCIALACCOUNT_PROVIDERS = \
 { 'google':
@@ -167,16 +206,16 @@ EMAIL_HOST_PASSWORD = 'sheeshmohsin'
 EMAIL_HOST_USER = 'registration@horizonbcrec.in'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-########## END EMAIL CONFIGURATION
+# ########## END EMAIL CONFIGURATION
 
-AWS_STORAGE_BUCKET_NAME = 'horizonbcrec'
-AWS_ACCESS_KEY_ID = 'AKIAIX5TIQDAWYS4ID6A'
-AWS_SECRET_ACCESS_KEY = '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'
-AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+# AWS_STORAGE_BUCKET_NAME = 'horizonbcrec'
+# AWS_ACCESS_KEY_ID = 'AKIAIX5TIQDAWYS4ID6A'
+# AWS_SECRET_ACCESS_KEY = '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'
+# AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#media-url
-#MEDIA_URL = '/media/'
-MEDIA_URL = "https://%s/" % AWS_S3_CUSTOM_DOMAIN
+MEDIA_URL = '/media/'
+#MEDIA_URL = "https://%s/" % AWS_S3_CUSTOM_DOMAIN
 # END MEDIA CONFIGURATION
 
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
