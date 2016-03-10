@@ -89,6 +89,8 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
+#     other finders..
+    'compressor.finders.CompressorFinder',
 )
 
 # Make this unique, and don't share it with anybody.
@@ -136,6 +138,7 @@ INSTALLED_APPS = (
     'bootstrap3',
     'avatar',
     'django_user_agents',
+    'compressor',
     #'storages',
 )
 

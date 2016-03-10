@@ -1,3 +1,4 @@
+{% load compress %}
 
 <!DOCTYPE HTML>
 <!--[if IEMobile 7 ]><html class="no-js iem7" manifest="default.appcache?v=1"><![endif]--> 
@@ -20,7 +21,7 @@
 <meta property="og:url" content="http://minimable.fedeweb.net/demo/the-original/" />
 <meta property="og:site_name" content="Minimable Demo - One Page Responsive Wordpress Theme" />
 <!-- / Yoast WordPress SEO plugin. -->
-
+{% compress css %}
 <link rel='stylesheet' id='contact-form-7-css'  href='http://minimable.fedeweb.net/demo/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=3.4.1' type='text/css' media='all' />
 <link rel='stylesheet' id='woocommerce-layout-css'  href='/static/woocommerce/assets/css/woocommerce-layout.css?ver=2.2.10' type='text/css' media='all' />
 <link rel='stylesheet' id='woocommerce-smallscreen-css'  href='/static/woocommerce/assets/css/woocommerce-smallscreen.css?ver=2.2.10' type='text/css' media='only screen and (max-width: 768px)' />
@@ -31,14 +32,20 @@
 <link rel='stylesheet' id='screen-css'  href='/static/minimable/style.css' type='text/css' media='screen' />
 <link rel='stylesheet' id='font-awesome-css'  href='http://minimable.fedeweb.net/demo/wp-content/themes/minimable-premium-20/css/font-awesome.min.css' type='text/css' media='screen' />
 <link rel='stylesheet' id='swipebox-css'  href='http://minimable.fedeweb.net/demo/wp-content/themes/minimable-premium-20/css/swipebox.css' type='text/css' media='screen' />
+{% endcompress %}
+
+{% compress js %}
 <script type='text/javascript' src='//code.jquery.com/jquery-1.11.0.min.js'></script>
 <script type='text/javascript' src='http://minimable.fedeweb.net/demo/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1'></script>
 <script type='text/javascript' src='http://minimable.fedeweb.net/demo/wp-content/themes/minimable-premium-20/js/html5.js'></script>
+{% endcompress %}
+
 <link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://minimable.fedeweb.net/demo/xmlrpc.php?rsd" />
 <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://minimable.fedeweb.net/demo/wp-includes/wlwmanifest.xml" /> 
 <meta name="generator" content="WordPress 4.1" />
 <meta name="generator" content="WooCommerce 2.2.10" />
 <link rel='shortlink' href='http://minimable.fedeweb.net/demo/?p=79' />
+{% compress css %}
 <style>
 body {background: #f9f9f9;}.page-template-main-template {background: transparent;}
 .page-template-main-template .section-page {padding:100px 0;}
@@ -80,6 +87,7 @@ font-size: 50px; line-height: 50px;
 body {font-size: 13px;}
 </style>
 	<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+	{% endcompress %}
 	</head>
 	<body class="page page-id-79 page-template page-template-main-template page-template-main-template-php" >
 					<div id="prepage"></div>
