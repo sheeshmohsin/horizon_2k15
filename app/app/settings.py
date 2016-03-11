@@ -81,7 +81,7 @@ STATIC_ROOT = join(BASE_DIR, 'staticfiles')
 
 # MEDIA CONFIGURATION
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#media-root
-# MEDIA_ROOT = join(BASE_DIR, 'media')
+MEDIA_ROOT = join(BASE_DIR, 'media')
 
 # List of finder classes that know how to find static files in
 # various locations.
