@@ -53,7 +53,7 @@
     line-height: 120px;
     color: rgba(169,3,41, 0.8);
 }
-.cb-slideshow li:nth-child(1) span { background-image: url(/static/images/cse.jpg) }
+.cb-slideshow li:nth-child(1) span { background-image: url(/static/images/cse1.jpg) }
 .cb-slideshow li:nth-child(2) span {
     background-image: url(/static/images/me.jpg);
     -webkit-animation-delay: 6s;
@@ -79,7 +79,7 @@
     animation-delay: 18s;
 }
 .cb-slideshow li:nth-child(5) span {
-    background-image: url(/static/images/cse.jpg);
+    background-image: url(/static/images/cse1.jpg);
     -webkit-animation-delay: 24s;
     -moz-animation-delay: 24s;
     -o-animation-delay: 24s;
