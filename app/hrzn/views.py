@@ -5,7 +5,7 @@ import urllib2
 
 from django.contrib import messages
 from django.conf import settings
-from django.shortcuts import render_to_response
+from django.shortcuts import render_to_response,render
 from hrzn.forms import *
 from hrzn.models import *
 from django.core.context_processors import csrf
@@ -33,6 +33,12 @@ def home(request):
     return render_to_response('basic.html', {'central_events':central_events, 'cse_events':cse_events,
         'ece_events':ece_events, 'eie_events':eie_events, 'ee_events':ee_events, 'me_events':me_events,
         'ce_events':ce_events, 'gaming_events':gaming_events, 'gallery':gallery }, context_instance=RequestContext(request))
+
+
+def team(request):
+    return  render_to_response('team.html')
+    #render(request,'profile.html',{})
+
 
 def youtube(request):
     return render_to_response('youtube.html')
@@ -190,3 +196,4 @@ def treasureanswer(request):
     else:
         messages.warning(request, 'Wrong Answer')
         return HttpResponseRedirect('/treasurehunt/')
+

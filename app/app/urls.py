@@ -9,6 +9,7 @@ urlpatterns = patterns('',
     # Examples:
     url(r'^$', 'hrzn.views.home', name='home'),
     url(r'^youtube/$', 'hrzn.views.youtube', name='youtube'),
+    url(r'^team/$', 'hrzn.views.team', name='team'),
     url(r'^profile/$', 'hrzn.views.profile', name='profile'),
     url(r'^profileform/$', 'hrzn.views.profileform', name='profileform'),
     url(r'^limitedsubmission/$', 'hrzn.views.limited', name='limited'),
