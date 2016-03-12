@@ -190,7 +190,7 @@ SOCIALACCOUNT_PROVIDERS = \
     { 'SCOPE': ['profile', 'email'],
       'AUTH_PARAMS': { 'access_type': 'online' } }}
 
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/profile/'
 
 ACCOUNT_AUTHENTICATION_METHOD = "email" # Defaults to username_email
 ACCOUNT_USERNAME_REQUIRED = False       # Defaults to True
