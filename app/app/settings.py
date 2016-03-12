@@ -4,7 +4,7 @@ from os.path import join
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
@@ -221,7 +221,7 @@ MEDIA_URL = '/media/'
 #MEDIA_URL = "https://%s/" % AWS_S3_CUSTOM_DOMAIN
 # END MEDIA CONFIGURATION
 
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+#DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
