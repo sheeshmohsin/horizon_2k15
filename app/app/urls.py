@@ -24,5 +24,6 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
     url(r'^accounts/', include('allauth.urls')),
-    url(r'^avatar/', include('avatar.urls')),	
+    url(r'^avatar/', include('avatar.urls')),
+    url(r'^team/$', 'hrzn.views.team', name='team'),
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
