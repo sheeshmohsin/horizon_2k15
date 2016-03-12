@@ -190,3 +190,6 @@ def treasureanswer(request):
     else:
         messages.warning(request, 'Wrong Answer')
         return HttpResponseRedirect('/treasurehunt/')
+
+def team(request):
+    return render_to_response('team.html')
