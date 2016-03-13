@@ -9,6 +9,7 @@ django-bootstrap3==7.0.0
 django-compressor==2.0
 django-storages==1.4
 django-user-agents==0.3.0
+django-htmlmin==0.9.0
 oauthlib==1.0.3
 python-openid==2.2.5
 rcssmin==1.0.6

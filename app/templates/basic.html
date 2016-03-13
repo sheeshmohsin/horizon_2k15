@@ -1,5 +1,4 @@
 {% load user_agents %}
-{% load compress %}
 <!DOCTYPE HTML>
 <!--[if IEMobile 7 ]><html class="no-js iem7" manifest="default.appcache?v=1"><![endif]--> 
 <!--[if lt IE 7 ]><html class="no-js ie6" lang="en"><![endif]--> 
@@ -14,7 +13,7 @@
 		<link rel="pingback" href="http://localhost/wordpress/wordpress/xmlrpc.php" />
 				<link rel="shortcut icon" href="/static/logo/fivo.ico"/>
 		<link rel='stylesheet' id='open-sans-css'  href='//fonts.googleapis.com/css?family=Open+Sans%3A300italic%2C400italic%2C600italic%2C300%2C400%2C600&#038;subset=latin%2Clatin-ext&#038;ver=3.9.2' type='text/css' media='all' />
-		{% compress css %}
+
 <!-- <link rel='stylesheet' id='dashicons-css'  href='http://localhost/wordpress/wordpress/wp-includes/css/dashicons.min.css?ver=3.9.2' type='text/css' media='all' /> -->
 <!-- <link rel='stylesheet' id='admin-bar-css'  href='http://localhost/wordpress/wordpress/wp-includes/css/admin-bar.min.css?ver=3.9.2' type='text/css' media='all' /> -->
 <link rel='stylesheet' id='contact-form-7-css'  href='/static/contact-form-7/includes/css/styles.css?ver=4.1' type='text/css' media='all' />
@@ -26,14 +25,14 @@
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/4.2.1/bootstrap-social.css' type='text/css' media='screen' />
 
 <link rel='stylesheet' id='slider'  href='/static/slider/css/style2.css' type='text/css' media='screen' />
-{% endcompress %}
-{% compress js %}
+
+
 <!-- <script type='text/javascript' src='/static/slider/js/modernizer.custom.86080.js'></script> -->
 
 <script type='text/javascript' src='//code.jquery.com/jquery-1.11.0.min.js'></script>
 <!-- <script type='text/javascript' src='http://localhost/wordpress/wordpress/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1'></script> -->
 <script type='text/javascript' src='/static/minimable/js/html5.js'></script>
-{% endcompress %}
+
 <link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://localhost/wordpress/wordpress/xmlrpc.php?rsd" />
 <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://localhost/wordpress/wordpress/wp-includes/wlwmanifest.xml" /> 
 <link rel='prev' title='Stunning Works in our portfolio' href='http://localhost/wordpress/wordpress/?page_id=79' />
@@ -41,7 +40,7 @@
 <meta name="generator" content="WordPress 3.9.2" />
 <link rel='canonical' href='http://localhost/wordpress/wordpress/' />
 <link rel='shortlink' href='http://localhost/wordpress/wordpress/' />
-{% compress css %}
+
 <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
 		<style>
 			.color, h1 > span, h2 > span, .description-text a, .description-text a:hover, ul.social li a span, .email-link:hover { color:#01a3b2!important;}
@@ -80,7 +79,7 @@
         	bottom:1.7em;
         }
         </style>
-        {% endcompress %}
+        
 					<div id="prepage"></div>
 		<header id="menu-top" class="home-top hide-menu">
 	<nav class="navbar navbar-inverse navbar-fixed-top">
@@ -111,7 +110,7 @@
 		</div>
 	</nav>
 </header>
-{% compress css %}
+
 <style>
 .three-big{
 	height:130px;
@@ -146,7 +145,7 @@
 </style>
 
 {% endif %}
-{% endcompress %}
+
 <section id="home" class="section-page full-home home-section page-1">
 	<div class="container ">
 				<div id="home-header">
@@ -471,7 +470,6 @@
     </div>
   </div>
 </div>
-{% compress js %}
 <script>
 $("#myModal").hide()
 </script>
@@ -560,6 +558,5 @@ var _wpcf7 = {"loaderUrl":"/static/contact-form-7/images/ajax-loader.gif","sendi
 			$(this).scrollTop(0);
 		});
 	</script>
-	{% endcompress %}
 	</body>
 </html>

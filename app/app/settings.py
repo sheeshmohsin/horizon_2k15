@@ -35,8 +35,6 @@ DATABASES = {
     }
 }
 
-
-
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, 'templates'),
 )
@@ -90,7 +88,6 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 #     other finders..
-    'compressor.finders.CompressorFinder',
 )
 
 # Make this unique, and don't share it with anybody.
@@ -107,6 +104,8 @@ MIDDLEWARE_CLASSES = (
     # Uncomment the next line for simple clickjacking protection:
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django_user_agents.middleware.UserAgentMiddleware',
+    'htmlmin.middleware.HtmlMinifyMiddleware',
+    'htmlmin.middleware.MarkRequestMiddleware',
 )
 
 AUTHENTICATION_BACKENDS = (
@@ -138,7 +137,6 @@ INSTALLED_APPS = (
     'bootstrap3',
     'avatar',
     'django_user_agents',
-    'compressor',
     #'storages',
 )
 
