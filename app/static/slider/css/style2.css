@@ -11,6 +11,9 @@
 }
 .cb-slideshow:after {
     content: '';
+}
+
+.cb-slideshow{
     background: transparent url(../images/pattern.png) repeat top left;
 }
 .cb-slideshow li span {
